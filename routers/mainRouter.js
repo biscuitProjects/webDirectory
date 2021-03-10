@@ -3,6 +3,10 @@ const mainRouter = new Router()
 const {check} = require("express-validator")
 const workerController = require('../controllers/workerController')
 
+const bodyParser = require('body-parser')
+const urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+
 mainRouter.get('/', async (req, res) => {
     res.render('index', {
       title: 'Авторизация',
@@ -12,10 +16,11 @@ mainRouter.get('/', async (req, res) => {
 // // Получаем департамент из бд
 mainRouter.get('/getDeps', workerController.getDeps)
 // // Получаем все подразделения департамента
-mainRouter.get('/getSubdsFromDep/:dep', workerController.getSubdsFromDep)
+mainRouter.post('/getSubdsFromDep/', workerController.getSubdsFromDep)
 // Получаем всех сотрудников подразделения
-mainRouter.get('/getWorkersFromSubd/:subd', workerController.getWorkersFromSubd)
-mainRouter.get('/searchWorkers/:fn', workerController.searchWorkers)
+mainRouter.post('/getWorkersFromSubd/', workerController.getWorkersFromSubd)
+// Поиск сотрудников
+mainRouter.post('/searchWorkers/', workerController.searchWorkers)
 
 
 // проверка дейстует ли токен

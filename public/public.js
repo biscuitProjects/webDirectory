@@ -1,15 +1,23 @@
+const token = getUserToken()
+
 // При попадании на сайт проверяется есть ли токен у пользователя
 
 
 // общая фетч функция для пост запросов в бд для получения данных
-const fetchPostData = async (url) =>{
+const fetchPostData = async (url, token, selector) =>{
+    console.log(selector)
     const response = await fetch(url, {
-        method: 'GET',
+        method: 'POST',
         mode: 'cors',
         cache: 'no-cache', 
         credentials: 'same-origin',
         redirect: 'follow', 
         referrerPolicy: 'no-referrer',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(selector) 
     })
     if (!response.ok) {
         console.log(response.statusText)
@@ -172,8 +180,11 @@ function  createElemsForDeps(params) {
 // Получение и вывод подразделений
 // Отправка запроса в бд для получения подразделений по департаменту
 // АПИ для вызова всех функций, которые нужны для вывода подразделений одного департамента
-function APIGetSubds(dep) {
-    fetchPostData(`/getSubdsFromDep/${dep.dep}`).then((data)=>{
+function APIGetSubds(depA) {
+    const dep = {
+        "dep": depA.dep
+    }
+    fetchPostData('/getSubdsFromDep', token, dep).then((data)=>{
         console.log(data.message)
         const abc = data.message
         createElemsForSubd(abc)
@@ -206,8 +217,11 @@ function APIGetSubds(dep) {
 // Получение и вывод сотрудников 
 // Отправка запроса в бд для получения сотрудников по подразделению
 // Вызываем и Получаем ответ из запроса  и вызываем функцию вывода 
-function APIGetWorkersFromSubd(subd) {
-    fetchPostData(`/getWorkersFromSubd/${subd.subd}`).then((data)=>{
+function APIGetWorkersFromSubd(subdA) {
+    const subd = {
+        "subd": subdA.subd
+    }
+    fetchPostData('/getWorkersFromSubd', token, subd).then((data)=>{
         console.log(data.message)
         const abc = data.message
         createElemsForWorkers(abc)
@@ -236,7 +250,7 @@ const worker = {
 
 
 function APISearchWorker(fn) {
-    fetchPostData(`/searchWorkers/${fn}`).then((data)=>{
+    fetchPostData('/searchWorkers', token, fn).then((data)=>{
         const abc = data.message
         createElemsForWorkers(abc)
     })
