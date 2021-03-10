@@ -1,0 +1,95 @@
+/* @font-face {
+    font-family: Oswald; 
+    src: url(fonts/._Oswald-Regular.ttf); 
+   } */
+
+* 	{
+	margin: 0;
+	padding: 0;
+}
+body {
+	padding: 0; margin: 0;
+	background: white;
+	font-family: 'Oswald', sans-serif;
+	display: flex;
+}
+#menu {
+	width: auto;
+	height: auto;
+	background-color: #4B4E51;
+	padding: 0;
+	margin: 0;
+	display: flex;
+ 	flex-direction: column;
+	 z-index: 1000;
+}
+#logo {
+	width: 500px;
+	height: 144px;
+	border-bottom: solid 1px white;
+	display: block;
+	position: fixed;
+	background-color: #4B4E51;
+	font-family: 'Oswald', sans-serif;
+}
+#deporments {
+	width: 500px;
+	height: auto;
+	list-style-type: none;
+	padding-left: 0;
+	padding-top: 144px;
+	margin: 0;
+	display: flex;
+	color: #fff;
+ 	flex-direction: column;
+}
+#deporments > li {
+	padding: 20px;
+	display: flex;
+	flex-direction: row;
+	border-top: solid 1px #fff;
+}
+#deporments > li > p {
+	margin: 5px 0 5px 0;
+	width: 100%;
+	font-size: 24px;
+}
+.logo {
+	position: relative;
+	display: block;
+	width: 90%;
+	height: auto;
+	padding: 20px;
+}
+.dep-ico {
+	width: auto;
+	margin: 0;
+	padding-right: 20px;
+}
+#spravochnik {
+	width: auto;
+	height: auto;
+}
+#header {
+	height: 144px;
+	width: 100%;
+	background-color: #4B4E51;
+	display: flex;
+	border-bottom: solid 2px #fff; 
+	position: fixed;
+	z-index: 1000;
+}
+#content {
+	width: 100%;
+	height: auto;
+}
+
+.content__center {
+	position: fixed;
+	 width: 100%;
+	height: 100%; 
+	left: 525px;
+	top: 110px;
+	background-image: url('../img/background_second.png') ;
+	background-repeat: no-repeat;
+}
