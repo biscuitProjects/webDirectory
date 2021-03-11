@@ -5,7 +5,105 @@
 
   <div class="container">
     {{{ body }}}
+
+    <p id="token"></p>
   </div>
 </body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-messaging.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<h1>This is a test page</h1>
+    <div id="token" style="color:lightblue"></div>
+    <div id="message" style="color:lightblue"></div>
+    <div id="notification" style="color:green"></div>
+    <div id="error" style="color:red"></div>
+
+    <script>
+
+        // TODO: Replace with your project's customized code snippet
+        var config = {
+            apiKey: "AIzaSyAV7QrSKaiK1El4MjI7_sXrfajsDcB97KU",
+            authDomain: "webdirectory-993df.firebaseapp.com",
+            projectId: "webdirectory-993df",
+            storageBucket: "webdirectory-993df.appspot.com",
+            messagingSenderId: "173594208626",
+            appId: "1:173594208626:web:8df9e654b9ddb39ef6d5eb"
+        };
+        firebase.initializeApp(config);
+
+ messageElement = document.getElementById("message")
+
+
+
+        tokenElement = document.getElementById("token")
+        notificationElement = document.getElementById("notification")
+        errorElement = document.getElementById("error")
+
+
+        const messaging = firebase.messaging();
+
+
+messaging.getToken({ vapidKey: 'BB139GH8dP84YSSLkRMOW65glnv_DOl-4gYCdCn36XC-zAYmeioJbdrfdpBt8A8LhHqQxfGyFpSmm0NE3LKe2bI' }).then((currentToken) => {
+  if (currentToken) {
+    console.log(`curret token ${currentToken}`)
+    // Send the token to your server and update the UI if necessary
+    // ...
+  } else {
+    // Show permission request UI
+    console.log('No registration token available. Request permission to generate one.');
+    // ...
+  }
+}).catch((err) => {
+  console.log('An error occurred while retrieving token. ', err);
+  // ...
+});
+
+        function initFirebaseMessagingRegistration() {
+            messaging
+                .requestPermission()
+                .then(function () {
+                    messageElement.innerHTML = "Got notification permission";
+                    console.log("Got notification permission");
+                    return messaging.getToken();
+                })
+                .then(function (token) {
+                    // print the token on the HTML page
+                    tokenElement.innerHTML = "Token is " + token;
+                })
+                .catch(function (err) {
+                    errorElement.innerHTML = "Error: " + err;
+                    console.log("Didn't get notification permission", err);
+                });
+        }
+        messaging.onMessage(function (payload) {
+            console.log("Message received. ", payload);
+            notificationElement.innerHTML = notificationElement.innerHTML + " " + payload.data.notification;
+        });
+        messaging.onTokenRefresh(function () {
+            messaging.getToken()
+                .then(function (refreshedToken) {
+                    console.log('Token refreshed.');
+                    tokenElement.innerHTML = "Token is " + refreshedToken;
+                }).catch(function (err) {
+                    errorElement.innerHTML = "Error: " + err;
+                    console.log('Unable to retrieve refreshed token ', err);
+                });
+        });
+
+        initFirebaseMessagingRegistration()
+    </script>
+
+<script src="/public.js"></script> 
+<script src="/pwa.js"></script> 
+<script src="fcm.js"></script>
+
+
+
 
 </html>
