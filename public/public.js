@@ -131,7 +131,7 @@ function hasToken(token){
 
 
 // Отправка запроса в бд для получения департаментов
-const getDeps = async (url) =>{
+const getDeps = async (url, token) =>{
     const response = await fetch(url, {
         method: 'GET',
         mode: 'cors',
@@ -139,6 +139,10 @@ const getDeps = async (url) =>{
         credentials: 'same-origin',
         redirect: 'follow', 
         referrerPolicy: 'no-referrer',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'Authorization': `Bearer ${token}`
+        },
     })
     if (!response.ok) {
         console.log(`Response failed: ' ${response.status} + ${response.statusText}`)
@@ -281,7 +285,7 @@ if(!isToken){
     // Тут я могу добавить проверку токена на валидность, которую в будущем можно добавить
 
     // Если пользователь авторизован, то выводим департаменты
-    getDeps('/getDeps').then((data)=>{
+    getDeps('/getDeps', token).then((data)=>{
         const abc = data.message
         createElemsForDeps(abc)
     })

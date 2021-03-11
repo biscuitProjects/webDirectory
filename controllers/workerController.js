@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { validationResult } = require('express-validator')
-const {secret} = require("../config")
+const {secret} = require("../config/config")
 const Dep = require('../models/dep')
 const Subd = require('../models/subd')
 const Worker = require('../models/worker')

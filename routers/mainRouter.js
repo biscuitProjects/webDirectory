@@ -3,9 +3,6 @@ const mainRouter = new Router()
 const {check} = require("express-validator")
 const workerController = require('../controllers/workerController')
 
-const bodyParser = require('body-parser')
-const urlencodedParser = bodyParser.urlencoded({ extended: false })
-
 
 mainRouter.get('/', async (req, res) => {
     res.render('index', {
