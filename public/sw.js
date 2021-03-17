@@ -8,7 +8,7 @@ const dynamicCacheName = 'd-app-v4'
 //     '404.css',
 //     'login.css',
 //     'regWorkerStyle.css',
-//     'public.js',
+//     'public.js', 
 //     'loginSuccess.js',
 //     'img/logoB.svg',
 //     'offline.html'

@@ -94,6 +94,11 @@ main{
     width: 64px;
     height: 64px;
   }
+
+  .iconForDep{
+    width: 64px;
+    height: 64px;
+  }
   /* Отключение flex зависимости от родительского элемента */
 .noneflex {
 	flex: none;

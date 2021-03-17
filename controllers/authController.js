@@ -56,7 +56,10 @@ class authController {
                 const username = candidate[indexCandidate].username
                 const role = candidate[indexCandidate].role
                 const token = smallServerScripts.generateAccessToken(username, role)
-                res.json({message : {username, token}})
+                res.render('login-success', {
+                    username, token
+                })
+                // res.json({message : {username, token}})
             }
 
         } catch (e) {

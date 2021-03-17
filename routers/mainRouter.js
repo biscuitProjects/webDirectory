@@ -2,7 +2,12 @@ const Router = require('express')
 const mainRouter = new Router()
 const {check} = require("express-validator")
 const workerController = require('../controllers/workerController')
+// const express = require('express')
 
+// const path = require('path')
+// const app = express()
+// app.use(express.urlencoded({ extended: true }))
+// app.use(express.static(path.join(__dirname, 'public')))
 
 mainRouter.get('/', async (req, res) => {
     res.render('index', {

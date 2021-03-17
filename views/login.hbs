@@ -1,14 +1,16 @@
+    <link rel="stylesheet" href="/static/css/login.css">
+
     <div class="container">
         <div class="auth">
-            <form action="auth/login" method="post">
+            <form action="login" method="post">
                 <div class="logo">
-                    <img class="logo__img" src="img/logo 1.svg" alt="Бисквит кондитерский дом">
+                    <img class="logo__img" src="/static/img/logoLogin.svg" alt="Бисквит кондитерский дом">
                 </div>
                 <div class="auth__text">Авторизация</div>
                 <div class="auth__pin">
                     <label class="pin__text" for="pin_name" >Введите свой пин-код</label>
                     <div>
-                        <input type="text" maxlength="4" minlength="4" class="pin myValidate" id="pin__name" title="Введите только 4 цифры" pattern="[0-9]{4,4}">
+                        <input type="text" maxlength="4" minlength="4" class="pin myValidate" id="pin__name" name="password" title="Введите только 4 цифры" pattern="[0-9]{4,4}">
                     </div>
                 </div>
                 <div class="auth__btn">
@@ -17,9 +19,12 @@
             </form>
         </div>
     </div>
-
+{{!-- 
   <h2> {{username}} </h2>
-  <h2> {{token}} </h2>
+  <h2> {{token}} </h2> --}}
 
+{{!-- 
+  <script src="/static/public.js"></script>  
+   --}}
 
-  <script src="/public.js"></script>  
+<script src="/static/js/login.js"></script>  
