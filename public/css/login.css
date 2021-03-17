@@ -1,0 +1,97 @@
+/* ОСНОВНЫЕ ТЕГИ */
+
+* {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #4B4E51;
+}
+
+body {
+    background-image: url('/img/background.png');
+    background-repeat: repeat;
+    background-size: cover;
+    max-width: 1920px;
+
+}
+
+
+
+.container {
+
+}
+
+.content {
+
+}
+
+.auth {
+    margin: 0 auto;
+    position: relative;
+    height: 100vh;
+    width: 696px;
+    background-color: #fff;
+    text-align: center;
+
+}
+.logo {
+}
+.logo__img {
+    margin-top: 300px;
+    height: 108px;
+    width: 439px;
+
+}
+.auth__text {
+    padding-top: 28px;
+    font-weight: 500;
+    font-size: 52px;
+    line-height: 24px;
+    text-transform: uppercase;
+
+}
+.auth__pin {
+    padding-top: 29px;
+}
+
+.auth__pin > div {
+    position: relative;
+    padding-top: 11px;
+}
+
+.pin__text {
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 24px;
+    text-transform: uppercase;
+    padding-right: 110px;
+
+}
+
+.pin {
+    font-size: 40px;
+    text-align: center;
+    width: 311px;
+    height: 40px;
+    border: 1px solid #4B4E51;
+    border-radius: 10px;
+}
+.auth__btn {
+    padding-top: 28px;
+}
+
+.btn {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 35.57px;
+
+    padding: auto;
+    border-radius: 10px;
+    background-color: #4B4E51;
+    width: 311px;
+    height: 40px;
+}

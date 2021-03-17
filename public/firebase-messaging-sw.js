@@ -24,23 +24,23 @@ messaging.setBackgroundMessageHandler(function (payload) {
     return self.registration.showNotification(payload.notification.title,notificationOption);
 });
 
-firebase.messaging().onBackgroundMessage(function(payload) {
-    console.log('[firebase-messaging-sw.js] Received background message ', payload);
-    // Customize notification here
-    const notificationTitle = payload.notification.title;
-    const notificationOptions = {
-      body: payload.notification.body,
-      icon: 'img/background.png'
-    };
+// firebase.messaging().onBackgroundMessage(function(payload) {
+//     console.log('[firebase-messaging-sw.js] Received background message ', payload);
+//     // Customize notification here
+//     const notificationTitle = payload.notification.title;
+//     const notificationOptions = {
+//       body: payload.notification.body,
+//       icon: 'img/background.png'
+//     };
   
-    return self.registration.showNotification(notificationTitle, notificationOptions);
-  });
+  //   return self.registration.showNotification(notificationTitle, notificationOptions);
+  // });
 
-self.addEventListener('push', function(event) {
-    const payload = event.data ? event.data.text() : 'no payload';
-    event.waitUntil(
-      self.registration.showNotification('ServiceWorker Cookbook', {
-          body: payload,
-      })
-    );
-  });
+// self.addEventListener('push', function(event) {
+//     const payload = event.data ? event.data.text() : 'no payload';
+//     event.waitUntil(
+//       self.registration.showNotification('ServiceWorker Cookbook', {
+//           body: payload,
+//       })
+//     );
+//   });

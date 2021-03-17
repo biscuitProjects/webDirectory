@@ -3,24 +3,25 @@ const staticCacheName = 's-app-v4'
 const dynamicCacheName = 'd-app-v4'
 
 // задаём файлы для сохранения их в кеше
-const assetUrls = [
-    'department.css',
-    'style.css',
-    'style2.css',
-    'public.js',
-    'loginSuccess.js',
-    'img/logoB.svg',
-    'offline.html'
-    // 'views/index.hbs'
-    // '/views/create.hbs',
-    // '/views/login.hbs'
-]
+// const assetUrls = [
+//     'index.css',
+//     '404.css',
+//     'login.css',
+//     'regWorkerStyle.css',
+//     'public.js',
+//     'loginSuccess.js',
+//     'img/logoB.svg',
+//     'offline.html'
+//     // 'views/index.hbs'
+//     // '/views/create.hbs',
+//     // '/views/login.hbs'
+// ]
 
-// При установки ПВА, создаём кеш
-self.addEventListener('install', async event => {
-    const cache = await caches.open(staticCacheName)
-    await cache.addAll(assetUrls)
-})
+// // При установки ПВА, создаём кеш
+// self.addEventListener('install', async event => {
+//     const cache = await caches.open(staticCacheName)
+//     await cache.addAll(assetUrls)
+// })
 
 // При активации ПВА, проверяем кеш, если мы задали новое значение,
 // то загружаем новый и удаляем старый кеш

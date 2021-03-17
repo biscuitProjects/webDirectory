@@ -21,9 +21,13 @@ const Dep = sequelize.define("subdivisions", {
       allowNull: false
     },
     director_subd: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
     },
+    dep_subd: {
+      type: Sequelize.STRING,
+      allowNull: false
+  },
 }, {
     timestamps: false,
 })

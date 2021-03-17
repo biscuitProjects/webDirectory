@@ -1,0 +1,200 @@
+/* Применение общих параметров */
+/* ================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald';
+    font-weight: 300;
+    font-size: 22px;
+    max-width: 1920px;
+    color: #4B4E51;
+}
+
+/* containers style */
+
+.container {
+    background-image: url(/img/background.png);
+    background-repeat: repeat;
+    background-size: cover;
+    width: 100%;
+    text-align: center;
+}
+
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    background-color: #fff;
+    height: 100%;
+    width: 700px;
+}
+
+/* logo geo style */
+
+.logo {
+    padding-top: 130px;
+}
+
+/* Form elements style */
+
+.reg {
+    text-transform: uppercase;
+    position: relative;
+    font-weight: 500;
+    font-size: 52px;
+    line-height: 24px;
+    color: #4B4E51;
+    padding-top: 35px;
+}
+
+.reg_form {
+    padding-top: 25px;
+}
+
+.field_label {
+    font-size: 22px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #4B4E51;
+}
+
+.data {
+    position: relative;
+    text-align: center;
+    width: 310px;
+    text-align: left;
+    padding-left: 195px;
+    padding-top: 35px;
+}
+
+.usr_data {
+    width: 310px;
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 18px;
+    color: #5F6377;
+    background-color: #fff;
+}
+
+/* Gender style */
+/* ================================================================================== */
+
+.gender {
+    color: #4B4E51;
+    padding-top: 22px;
+    
+}
+
+.gender_value {
+    display: flex;
+    color: #5F6377;
+}
+
+.gender_value > p {
+    padding-right: 22px;
+}
+
+/* Select */
+/* ================================================================================== */
+
+
+.depSelect{
+    width: 100%;
+    margin: 10px 0 0 0;
+    display: block;
+    background: none;
+    border-radius: 10px 10px 10px 10px;
+    line-height: 36px;
+    border: 2px solid #4B4E51;
+    outline: none;
+    padding: 3px 0;
+    text-align: center;
+    text-align-last:center; 
+    color: #4B4E51;
+    
+}
+
+
+.subdSelect{
+    width: 100%;
+    margin: 10px 0 0 0;
+    display: block;
+    background: none;
+    border-radius: 10px 10px 10px 10px;
+    line-height: 36px;
+    border: 2px solid #4B4E51;
+    outline: none;
+    padding: 3px 0;
+    text-align: center;
+    text-align-last:center; 
+}
+
+/* radion btn  */
+
+.radioBtn{
+    margin: 0 5px;
+}
+
+/* Button style */
+/* ======================================================================================= */
+
+.btn {
+    padding-top: 30px;
+    bottom: 128px;
+
+}
+
+.btn_form {
+    border-radius: 10px 10px 10px 10px;
+    padding: 0px 64px;
+    margin-bottom: 128px;
+
+    color: #fff;
+    background-color: #4B4E51;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    outline: none;
+
+
+
+}
+
+.active {
+    background-color: #4B4E51;
+    color: white;
+  }
+
+.dropdown_container {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 310px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.reg_form a {
+    padding-top: 5px;
+    text-decoration: none;
+}
+
+  .reg_form a, .usr_data {
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    background: none;
+    width: 310px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+  }
+
+
+
+
+
+

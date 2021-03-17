@@ -36,6 +36,7 @@ class authController {
     async login(req, res) {
         try {
             const {password} = req.body
+            console.log(password)
             // Берем всех пользователей из БД
             const candidate = await User.findAll()
             let indexCandidate; 

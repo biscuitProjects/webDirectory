@@ -1,16 +1,25 @@
-  <form action="/auth/login" method="POST">
-    <div class="form">
-      <img src="/img/logo 1.svg" alt="А оно тут есть" class="logo">
-      <h2 class="auth">Авторизация</h2>
-        <label class="pin">Введите свой пин-код</label>
-        <input class="pin__code" type="password" name="password" maxlength="6" minlength="4">
-        <input type="submit" class="auth__btn">
+    <div class="container">
+        <div class="auth">
+            <form action="auth/login" method="post">
+                <div class="logo">
+                    <img class="logo__img" src="img/logo 1.svg" alt="Бисквит кондитерский дом">
+                </div>
+                <div class="auth__text">Авторизация</div>
+                <div class="auth__pin">
+                    <label class="pin__text" for="pin_name" >Введите свой пин-код</label>
+                    <div>
+                        <input type="text" maxlength="4" minlength="4" class="pin myValidate" id="pin__name" title="Введите только 4 цифры" pattern="[0-9]{4,4}">
+                    </div>
+                </div>
+                <div class="auth__btn">
+                    <input type="submit" class="btn" value="Войти">
+                </div>
+            </form>
+        </div>
     </div>
-  </form>
-
 
   <h2> {{username}} </h2>
   <h2> {{token}} </h2>
 
 
-  <script src="/public.js"></script> 
+  <script src="/public.js"></script>  

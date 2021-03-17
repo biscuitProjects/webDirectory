@@ -3,26 +3,29 @@
 <body>
   {{> navbar}}
 
-  <div class="container">
-    {{{ body }}}
+  {{{ body }}}
 
-    <p id="token"></p>
-  </div>
+  <p id="token"></p>
+
+
+  <h1>This is a test page</h1>
+  <div id="token" style="color:lightblue"></div>
+  <div id="message" style="color:lightblue"></div>
+  <div id="notification" style="color:green"></div>
+  <div id="error" style="color:red"></div>
+
 </body>
+
+
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-messaging.js"></script>
 
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-<h1>This is a test page</h1>
-    <div id="token" style="color:lightblue"></div>
-    <div id="message" style="color:lightblue"></div>
-    <div id="notification" style="color:green"></div>
-    <div id="error" style="color:red"></div>
+<script src="/public.js"></script> 
+<script src="/pwa.js"></script> 
+<script src="fcm.js"></script>
 
     <script>
 
@@ -98,11 +101,6 @@ messaging.getToken({ vapidKey: 'BB139GH8dP84YSSLkRMOW65glnv_DOl-4gYCdCn36XC-zAYm
 
         initFirebaseMessagingRegistration()
     </script>
-
-<script src="/public.js"></script> 
-<script src="/pwa.js"></script> 
-<script src="fcm.js"></script>
-
 
 
 
