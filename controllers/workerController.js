@@ -39,15 +39,15 @@ class workerController {
         const {fn} = req.body
         const token = req.headers.authorization.split(' ')[1]
         const getWorker = await  Worker.findAll({
-            limit: 5,
             where: {
                 fullName_worker: {
                     [Sequelize.Op.like]: `%${fn}%`
                 }
             }
         })
+
         if(!getWorker.length){
-            return res.status(400).json({message: `Таких подразделений нет`})
+            return res.status(400).json({message: `Такого сотрудника нет`})
         } 
         res.json({message: getWorker})  
     }

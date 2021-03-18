@@ -8,13 +8,12 @@
     /* шрифты */
     font-family: 'Oswald';
     font-weight: 400;
+    text-decoration: none;
 }
 
 
 /* HEADER STYLE */
 /* ============================================================== */
-
-/* logo style */
 .logo {
 	width: 500px;
 	height: 144px;  
@@ -29,6 +28,10 @@
   display: block;
 }
 
+.SearchBarAndNav{
+  width: 1300px;
+}
+
 .header_content {
   height: 164px;
 	width: 100%;
@@ -36,31 +39,51 @@
 	display: flex;
 }
 
-.search__menu {
+.nav{
+  height: 50%;
   width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  
+}
+
+.navLink{
+  margin: 0 10px;
+  color: white;
+  font-size: 24px;
+}
+
+.searchMenu{
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.searchBar {
+  width: 80%;
 	height: 40px;
-	top: 104px;
   border: 0px;
 	border-radius: 10px 0px 0px 10px;
-	position: relative;
 	background-color: #313234;
 	font-size: 24px;
   color: white;
-  padding: 0 0 0 10px;
+  padding: 0 0 0 20px;
 }
 
 .loupe {
-  position: relative;
 	width: 28px;
 	height: 28px;
-	top: 104px;
-
 	z-index: 2000;
 	background-color: #4B4E51;
 	border-radius: 0px 10px 10px 0px;
 	border: 2px solid #313234;
 	padding: 4px
 }
+
 
 
 /* MAIN */
@@ -185,14 +208,61 @@ main{
   font-size: 24px;
   background-color: #313234;
   width: 50%;
-  border-right: 1px solid #4B4E51;
   border-bottom: 1px solid white;
   border-top: 1px solid #fff;
   padding: 9px 0 0 20px;
 }
 
+/* // dam = director and manager  */
+
+.workerCardDAM{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  height: 105px;
+  background-color: #313234;
+}
+
+
+.infoDAM {
+  border-right: 1px solid #4B4E51;
+  border-bottom: 1px solid #4B4E51;
+  border-top: 1px solid #fff;
+  color: #313234;
+  width: 360px;
+  padding: 0 0 0 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.phone__labelDAM {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 35.57px;
+  color: white;
+
+}
+
+
+.phoneDAM {
+  border-right: 1px solid #4B4E51;
+  border-bottom: 1px solid #4B4E51;
+  border-top: 1px solid #fff;
+  color: white;
+  width: 180px;
+  padding: 0 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .labelDesc{
-  font-size: 30px;
+  font-size: 24px;
 }
 
 .textDesc{
@@ -217,10 +287,12 @@ main{
   background-color: #4B4E51;
   background-repeat: no-repeat;
   width: 107px;
-  height: 107px;
+  height: 104px;
   z-index: 20;
   border-bottom: 1px solid white;
   border-top: 1px solid white;
+  display: flex;
+  align-items: center;
 }
 
 .icon__svg {
@@ -238,6 +310,9 @@ main{
   color: #313234;
   width: 360px;
   padding: 0 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
 }
 
@@ -256,6 +331,9 @@ main{
   border-top: 1px solid #fff;
   width: 180px;
   padding: 0 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .phone__label {

@@ -1,7 +1,4 @@
 const sequelize = require('../config/db')
-const {secret} = require('../config/config')
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
 
 const { Sequelize, DataTypes, Model } = require('sequelize')
 
@@ -16,13 +13,13 @@ const Dep = sequelize.define("deps", {
       type: Sequelize.STRING,
       allowNull: false
     },
-    director_deps: {
-      type: Sequelize.STRING,
-      allowNull: false
-    },
     desc_deps: {
         type: Sequelize.INTEGER,
         allowNull: false
+    },
+    worker_dep: {
+      type: Sequelize.STRING,
+      allowNull: false
     },
     org_deps: {
         type: Sequelize.STRING,

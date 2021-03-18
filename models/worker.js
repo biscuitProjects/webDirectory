@@ -26,20 +26,29 @@ const Worker = sequelize.define("workers", {
     },
     subd_worker:{
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        defaultValue: "NULL"
     },
-    manager_worker: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
     dep_worker: {
         type: Sequelize.STRING,
         allowNull: false
     },
+    code_worker: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      defaultValue: "NULL"
+    },
+    manager_worker: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      defaultValue: "NULL"
+    },
     director_worker: {
-        type: Sequelize.STRING,
-        allowNull: false
-    }
+      type: Sequelize.STRING,
+      allowNull: false,
+      defaultValue: "NULL"
+    },
+
 }, {
     timestamps: false,
 })

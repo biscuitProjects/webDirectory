@@ -1,12 +1,21 @@
     <link rel="stylesheet" href="css/index.css">
 
-    <header class='header'>
-        <div class="header_content">
+    <header>
+       <div class="header_content">
 			<div class="logo">
 				<img class="logo_img" src="img/logo.svg" />
 			</div>
-			<input class="search__menu" type="text" placeholder="  Введите данные сотрудника...">
-			<img class="loupe" src="/img/loupe__1.svg" alt="search me">
+            <div class="SearchBarAndNav">
+                <div class="nav">
+                    <a href="" class="navLink">ГЛАВНАЯ</a>
+                    <a href="" class="navLink">АДМИНКА</a>
+                    <a href="" class="navLink">ВЫЙТИ</a>
+                </div>
+                <div class="searchMenu">
+                    <input class="searchBar" type="text" placeholder="Введите данные сотрудника...">
+			        <img class="loupe" src="/img/loupe__1.svg" alt="search me">
+                </div>
+            </div>
 		</div>
     </header>
     <main>
@@ -30,16 +39,9 @@
         </div>
         <!-- Контент -->
         <div class="content__page">
-            <!-- <div class="contentDesc">
-                <div class="infoDesc">
-                    <p class="labelDesc">Директор департамента</p>
-                    <p class="textDesc">Владимир Ким</p>
-                </div>
-                <div class="infoDesc">
-                    <p class="labelDesc">Старший специалист подразделения</p>
-                    <p class="textDesc">Юрий Тян</p>
-                </div>
-            </div> -->
+            <div class="contentDesc">
+               
+            </div>
             <div class="workers">
                 <div class="workerCard">
                     <div class="icon">
@@ -59,6 +61,5 @@
     </main>
 
 
-<script src="/static/js/dropDown.js"></script>
 <script src="/static/js/forIndex.js"></script>
 <script src="/static/public.js"></script>

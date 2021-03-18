@@ -23,7 +23,6 @@
     
 // общая фетч функция для пост запросов в бд для получения данных
 const fetchPostData = async (url, token, selector) =>{
-    console.log(selector)
     const response = await fetch(url, {
         method: 'POST',
         mode: 'cors',
@@ -213,10 +212,14 @@ function APIGetWorkersFromSubd(subdA) {
         "subd": subdA.subd
     }
     fetchPostData('/getWorkersFromSubd', token, subd).then((data)=>{
-        console.log(data.message)
         const abc = data.message
         createElemsForWorkers(abc)
     })
+}
+
+
+function getDirecotrFromDB(dep){
+
 }
 
 
@@ -234,6 +237,54 @@ function APISearchWorker(fn) {
     })
 }
 
+
+function searchDirectorAndManager(name, modeForElem){
+    const fn = {
+        "fn" : name
+    }
+    fetchPostData('/searchWorkers', token, fn).then((data)=>{
+        const abc = data.message
+        createElementsForDirectorAndManager(abc, modeForElem)
+    })
+}
+
+// mode = director or manager
+function createElementsForDirectorAndManager(data, mode){
+    let workEmployee
+    if(mode === 'Директор департамента'){
+        workEmployee = data[0].dep_worker
+    } else if(mode === 'Старший специалист'){
+        workEmployee = data[0].subd_worker
+    }
+    const contentPage = document.querySelector(".contentDesc")
+
+    const divDirector = document.createElement('div')
+    // dam = director and manager 
+    divDirector.classList.add('workerCardDAM')
+    data.forEach(element => {
+        divDirector.innerHTML = `
+        <div class="icon">
+            <img class="icon__svg" src="/img/male.svg" alt="Мужчина">
+        </div>
+        <div class="infoDAM">
+            <p class="labelDesc">${mode} ${workEmployee} </p>
+            <p class="textDesc">${element.fullName_worker}</p>
+        </div>
+        <div class="phoneDAM">
+            <p class="phone__labelDAM">Телефон</p>
+            <p class="phone__num">${element.tel_worker}</p>
+        </div>     
+    `
+    });
+
+
+    // <div class="infoDesc">
+    //     <p class="labelDesc">Старший специалист подразделения</p>
+    //     <p class="textDesc">${manager}</p>
+    // </div>
+    contentPage.append(divDirector)
+}
+
 // APISearchWorker('arr')
 
 // функция вывода информации по сотрудникам
@@ -241,20 +292,35 @@ function  createElemsForWorkers(params) {
     const contentPage = document.querySelector(".workers")
     contentPage.innerHTML = ''
 
-    const divDirector = document.createElement('div')
-    divDirector.classList.add('contentDesc')
-    divDirector.innerHTML = `
-        <div class="infoDesc">
-            <p class="labelDesc">Директор департамента</p>
-            <p class="textDesc">Владимир Ким</p>
-        </div>
-        <div class="infoDesc">
-            <p class="labelDesc">Старший специалист подразделения</p>
-            <p class="textDesc">Юрий Тян</p>
-        </div>
-    `
+    let directorName
+    let managerName
 
+    function getDirector(){
+        params.forEach(element => {
+            if(element.director_worker !== null){
+                directorName = element.director_worker
+            }
+        })
+    }
+    getDirector()
+    function getManager(){
+        params.forEach(element => {
+            if(element.manager_worker !== null){
+                managerName = element.manager_worker
+            }
+        })
+    }
+    getManager()
+    
+    searchDirectorAndManager(directorName, 'Директор департамента')
+    searchDirectorAndManager(managerName, 'Старший специалист')
+
+
+    
     for (let i = 0; i < params.length; i++){
+        if(params[i].code_worker !== null){
+            continue
+        }
         const div = document.createElement("div")
         div.classList.add('workerCard')
         div.innerHTML = `
@@ -294,4 +360,39 @@ if(!token){
             const abc = data.message
             createElemsForDeps(abc)
         })
+}
+
+
+let index = 0
+// Основной функционал dropDowns
+function addDropdows(){
+  console.log('wroesad')
+  const dropdown = document.querySelectorAll(".dropdown-btn");
+  for (const btn of dropdown) {
+    if(!index){
+      btn.addEventListener("click", (e) =>{
+        btn.classList.toggle("activeDDC");
+        console.log(btn.textContent)
+        let dropdownContent = btn.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          // Тут я ищу и закрываю уже открытые дропдауны
+          const otherDropDown = document.querySelectorAll('.dropdown-container')
+          for (const iterator of otherDropDown) {
+            if(iterator.style.display === "block"){
+              iterator.style.display = "none"
+              console.log('try')
+            }
+          }
+          // Тут я закрываю дропдаун если он открыт и я на него нажал
+          dropdownContent.style.display = "block";
+        }
+      });
+    } else{
+      break;
+    }
+    
+  }  
+  index = 1
 }
