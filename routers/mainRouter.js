@@ -24,12 +24,13 @@ mainRouter.post('/getWorkersFromSubd', workerController.getWorkersFromSubd)
 // Поиск сотрудников
 mainRouter.post('/searchWorkers', workerController.searchWorkers)
 
-
 mainRouter.get('/regNewWorker', async (req, res) => {
   res.render('regNewWorker', {
     title: 'Регистрация нового сотрудника'
   })
 })
+
+mainRouter.post('/regNewWorker', workerController.createNewWorker)
 
 // проверка дейстует ли токен
 mainRouter.post('/us', async (req, res) => {

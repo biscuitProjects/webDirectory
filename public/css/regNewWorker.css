@@ -73,7 +73,7 @@
     height: 40px;
     border-radius: 10px 10px 10px 10px;
     font-size: 18px;
-    color: #5F6377;
+    color: #4B4E51;
     background-color: #fff;
 }
 
@@ -184,12 +184,11 @@
 
   .reg_form a, .usr_data {
     font-size: 18px;
-    color: #818181;
+    color: #4B4E51;
     display: block;
     background: none;
     width: 310px;
     text-align: center;
-    cursor: pointer;
     outline: none;
   }
 

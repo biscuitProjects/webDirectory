@@ -51,6 +51,13 @@ class workerController {
         } 
         res.json({message: getWorker})  
     }
+
+
+    async createNewWorker(req, res){
+        const {fullName, tel, dep, subd, employee, gender} = req.body
+        console.log(`${fullName}  ${tel}  ${dep}  ${subd}  ${employee}  ${gender}`)
+        res.json({message: 'nice'})
+    }
 }
 
 module.exports = new workerController()

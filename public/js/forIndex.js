@@ -343,8 +343,8 @@ function  createElemsForWorkers(params) {
 const token = getUserToken()
 // Тут я проверяю авторизован ли пользователь, если то 
 if(!token){
-    if(window.location.href != 'http://localhost:5000/auth/login'){
-        window.location.href ='http://localhost:5000/auth/login'
+    if(window.location.pathname != 'auth/login'){
+        window.location.pathname ='auth/login'
     }
     
 } else{
