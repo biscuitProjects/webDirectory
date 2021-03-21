@@ -13,6 +13,7 @@ mainRouter.get('/', async (req, res) => {
     res.render('index', {
       title: 'Авторизация',
       isIndex: true,
+      stylecss: 'index'
     })
 })
 // // Получаем департамент из бд
@@ -26,7 +27,8 @@ mainRouter.post('/searchWorkers', workerController.searchWorkers)
 
 mainRouter.get('/regNewWorker', async (req, res) => {
   res.render('regNewWorker', {
-    title: 'Регистрация нового сотрудника'
+    title: 'Регистрация нового сотрудника',
+    stylecss: 'regNewWorker'
   })
 })
 

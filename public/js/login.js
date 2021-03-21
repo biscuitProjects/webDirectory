@@ -8,7 +8,7 @@
                 if(jsonUserToken.token.length != 0){
                     if(del == true){
                         localStorage.removeItem(key)
-                        window.location.href ='http://localhost:5000/auth/login'
+                        window.location.pathname ='/auth/login'
                     }
                     return jsonUserToken;
                 }
@@ -21,12 +21,12 @@
 
 const token = getUserToken()
 if(!token){
-    if(window.location.href != 'http://localhost:5000/auth/login'){
-        window.location.href ='http://localhost:5000/auth/login'
+    if(window.location.pathname != '/auth/login'){
+        window.location.pathname ='/auth/login'
     }
     
 } else{
-    window.location.href = 'http://localhost:5000/'
+    window.location.pathname = '/'
 }
 
 

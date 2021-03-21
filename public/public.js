@@ -85,7 +85,7 @@ function getUserToken(del = false){
             if(jsonUserToken.token.length != 0){
                 if(del == true){
                     localStorage.removeItem(key)
-                    window.location.href ='http://localhost:5000/auth/login'
+                    window.location.pathname ='/auth/login'
                 }
                 return jsonUserToken;
             }

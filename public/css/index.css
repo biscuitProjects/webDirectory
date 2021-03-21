@@ -12,8 +12,22 @@
 }
 
 
+
+
+
 /* HEADER STYLE */
 /* ============================================================== */
+
+
+.header_content {
+  height: 164px;
+  max-width: 100%;
+	background-color: #4B4E51;
+	display: flex;
+  
+}
+
+
 .logo {
 	width: 500px;
 	height: 144px;  
@@ -32,20 +46,12 @@
   width: 1300px;
 }
 
-.header_content {
-  height: 164px;
-	width: 100%;
-	background-color: #4B4E51;
-	display: flex;
-}
-
 .nav{
-  height: 50%;
+  height: 90%;
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  
+  align-items: flex-end;  
 }
 
 .navLink{
@@ -363,3 +369,151 @@ main{
 
 }
 
+
+@media only screen and (max-width: 1024px) {
+
+  .labelDesc{
+    font-size: 18px;
+  }
+
+  body{
+    max-width: 1024px;
+    /* background-color: red; */
+    font-size: 18px;
+  }
+
+  .sidenav{
+    min-width: 30%;
+    
+  }
+
+  .dep{
+    width: 100%;
+    padding: 20px 10px 20px 0;
+  } 
+
+  .dep-ico{
+    display: none;
+  }
+
+ 
+
+  .sidenav a, .dropdown-btn{
+    font-size: 18px;
+    word-wrap: break-word;
+    margin-left: 20px
+  }
+
+
+  .content__page{
+    max-width: 70%;
+  }
+
+  header{
+    max-width: 1024px;
+  }
+
+
+  .header_content{
+    max-width: 1024px;
+  }
+
+
+
+  .icon{
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+  body{
+    max-width: 900px;
+    width: 100%;
+  }
+
+  header{
+    width: 100%;
+    height: 144px;
+  }
+
+  .header_content{
+    height: 144px;
+  }
+
+  .logo{
+    width: 400px;
+    height: 144px;
+    margin: 0 0 0 20px;
+    
+  }
+
+  .logo_img{
+    width: 400px;
+    padding: 0;
+  }
+
+  .nav{
+    height: 88%;
+    padding: 0 0 4px 0;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+
+  body{
+    max-width: 550px;
+    width: 100%;
+  }
+
+  header{
+    width: 100%;
+    height: 210px;
+  }
+
+  .header_content{
+    width: 100%;
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .logo{
+    width: 100%;
+    height: 150px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo_img{
+    width: 90%;
+    padding: 0;
+  }
+
+  .SearchBarAndNav{
+    width: 100%;
+    height: 100px;
+    
+  }
+
+  .nav{
+    height: 40px;
+    justify-content: center;
+  }
+
+  .navLink{
+    font-size: 20px;
+  }
+
+
+  main{
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .sidenav{
+    width: 100%;
+  }
+}

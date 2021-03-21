@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const serveStatic = require('serve-static')
 
 const { response } = require('express')
-const PORT = 5000
+const PORT = 5432
 
 const app = express()
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -52,7 +52,7 @@ app.set('views', 'views')
 
 
 app.use(function (req, res, next) {
-  res.status(404).send("Not Found")
+  res.redirect('/')
 });
 
 app.listen(PORT, () => { console.log(PORT)});

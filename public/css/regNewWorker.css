@@ -22,6 +22,9 @@
 
 
 .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -50,6 +53,7 @@
 
 .reg_form {
     padding-top: 25px;
+    width: 100%;
 }
 
 .field_label {
@@ -62,14 +66,16 @@
 .data {
     position: relative;
     text-align: center;
-    width: 310px;
-    text-align: left;
-    padding-left: 195px;
+    width: 400px;
     padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .usr_data {
-    width: 310px;
+    width: 100%;
     height: 40px;
     border-radius: 10px 10px 10px 10px;
     font-size: 18px;
@@ -187,11 +193,75 @@
     color: #4B4E51;
     display: block;
     background: none;
-    width: 310px;
+    width: 400px;
     text-align: center;
     outline: none;
   }
 
+
+
+  @media only screen and (max-width: 900px) {
+    .containerRegNewWorker {
+        width: 700px;
+    }
+
+    .data{
+        width: 400px;
+        /* background-color: rebeccapurple; */
+    }
+
+    .reg_form{
+        width: 100%;
+    }
+
+    .usr_data{
+        width: 100%;
+    }
+  }
+
+
+  @media only screen and (max-width: 450px) {
+
+    body{
+        max-width: 450px;
+    }
+
+    .containerRegNewWorker {
+        max-width: 100vw;
+    }
+
+    main{
+        max-width: 100vw;
+    }
+
+    .logo{
+        width: 60vw;
+    }
+
+    .logo_svg{
+        width: 60vw;
+    }
+
+    .reg{
+        font-size: 34px;
+    }
+
+    .data{
+        width: 60vw;
+        /* background-color: rebeccapurple; */
+    }
+
+    .reg_form{
+        width: 100%;
+    }
+
+    .usr_data{
+        width: 100%;
+    }
+
+
+    
+  }
 
 
 

@@ -8,7 +8,7 @@
                 if(jsonUserToken.token.length != 0){
                     if(del == true){
                         localStorage.removeItem(key)
-                        window.location.href ='http://localhost:5000/auth/login'
+                        window.location.pathname ='/auth/login'
                     }
                     return jsonUserToken;
                 }
@@ -125,6 +125,7 @@ function APIGetSubds(depA) {
             // console.log(`iterator = ${iterator.textContent.trim()}   params = ${params[i].dep_subd}`)
             if(iterator.textContent.trim() == `${params[i].dep_subd}`){
                 div.addEventListener('click', (e) =>{
+                    document.querySelector(".contentDesc").innerHTML = ''
                     e.preventDefault()
                     const req = {
                         subd: params[i].name_subd,
