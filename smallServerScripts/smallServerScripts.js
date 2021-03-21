@@ -5,6 +5,9 @@ const {secret} = require("../config/config")
 const db = require('../config/db')
 const User = require('../models/user') 
 
+const Dep = require('../models/dep')
+const Subd = require('../models/subd')
+
 
 class SmallScripts {
 
@@ -87,6 +90,21 @@ class SmallScripts {
         }
         return result
     }
+
+    async  getDirector(dep) {
+      
+        const getDep = await Dep.findAll({
+            where: {name_deps : dep}
+        })
+        return getDep
+    }
+    
+    async  getManager(subd) {
+       
+        const getSubd = await Subd.findAll({ where: {name_subd: subd}})    
+        return getSubd
+    }
+    
 }
 
 module.exports = new SmallScripts()

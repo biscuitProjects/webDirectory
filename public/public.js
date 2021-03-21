@@ -5,6 +5,57 @@
 // тут я удаляю токен пользователя из Localstorage
 
 
+
+// общая фетч функция для пост запросов в бд для получения данных
+const fetchPostData = async (url, token, selector) =>{
+    const response = await fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache', 
+        credentials: 'same-origin',
+        redirect: 'follow', 
+        referrerPolicy: 'no-referrer',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(selector) 
+    })
+    if (!response.ok) {
+        console.log(response.statusText)
+        // Сервер вернул код ответа за границами диапазона [200, 299]
+        return Promise.reject(new Error(
+            'Response failed: ' + response.status + ' (' + response.statusText + ')'
+        ))
+    }
+    const body = await response.json()
+    console.log(body)
+    return body
+}
+
+
+async function getDeps(url, token){
+    const response = await fetch(url, {
+        method: 'GET',
+        mode: 'cors',
+        cache: 'no-cache', 
+        credentials: 'same-origin',
+        redirect: 'follow', 
+        referrerPolicy: 'no-referrer',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'Authorization': `Bearer ${token}`
+        },
+    })
+    if (!response.ok) {
+        console.log(`Response failed: ' ${response.status} + ${response.statusText}`)
+        // Сервер вернул код ответа за границами диапазона [200, 299]
+        return `Response failed: ' ${response.status} + ${response.statusText}`
+    }
+    const body = await response.json()
+    return body
+}
+
 // getUserToken(true)
 
 

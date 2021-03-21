@@ -30,6 +30,9 @@ mainRouter.get('/regNewWorker', async (req, res) => {
   })
 })
 
+mainRouter.post('/getEmployeePosts', workerController.getEmployeePosts)
+
+
 mainRouter.post('/regNewWorker', workerController.createNewWorker)
 
 // проверка дейстует ли токен

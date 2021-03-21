@@ -21,33 +21,6 @@
 
 
     
-// общая фетч функция для пост запросов в бд для получения данных
-const fetchPostData = async (url, token, selector) =>{
-    const response = await fetch(url, {
-        method: 'POST',
-        mode: 'cors',
-        cache: 'no-cache', 
-        credentials: 'same-origin',
-        redirect: 'follow', 
-        referrerPolicy: 'no-referrer',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify(selector) 
-    })
-    if (!response.ok) {
-        console.log(response.statusText)
-        // Сервер вернул код ответа за границами диапазона [200, 299]
-        return Promise.reject(new Error(
-            'Response failed: ' + response.status + ' (' + response.statusText + ')'
-        ))
-    }
-    const body = await response.json()
-    console.log(body)
-    return body
-}
-
 
 const postToken = async (url, data) =>{
     const token = data.token
@@ -75,27 +48,7 @@ const postToken = async (url, data) =>{
 
 
 // Отправка запроса в бд для получения департаментов
-const getDeps = async (url, token) =>{
-    const response = await fetch(url, {
-        method: 'GET',
-        mode: 'cors',
-        cache: 'no-cache', 
-        credentials: 'same-origin',
-        redirect: 'follow', 
-        referrerPolicy: 'no-referrer',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Authorization': `Bearer ${token}`
-        },
-    })
-    if (!response.ok) {
-        console.log(`Response failed: ' ${response.status} + ${response.statusText}`)
-        // Сервер вернул код ответа за границами диапазона [200, 299]
-        return `Response failed: ' ${response.status} + ${response.statusText}`
-    }
-    const body = await response.json()
-    return body
-}
+
 // Вызываем и Получаем ответ из запроса  и вызываем функцию вывода 
 // getDeps('/getDeps').then((data)=>{
 //     const abc = data.message
@@ -105,36 +58,27 @@ const getDeps = async (url, token) =>{
 // функция вывода информации по подразделеним
 function  createElemsForDeps(params) {
     for (let i = 0; i < params.length; i++){
-        const div = document.createElement("div")
-        div.classList.add('dep')
-        div.innerHTML = `
-            <div class="dep-ico">
-                <img class="iconForDep" src="img/peka.svg">
-            </div>
-            <div class="noneflex">
-                <a class="dropdown-btn" id="${params[i].name_deps}">${params[i].name_deps}</a>
-            </div>
-        `
+        if(params[i].name_deps !== 'global'){
+            const div = document.createElement("div")
+            div.classList.add('dep')
+            div.innerHTML = `
+                <div class="dep-ico">
+                    <img class="iconForDep" src="img/peka.svg">
+                </div>
+                <div class="noneflex">
+                    <a class="dropdown-btn" id="${params[i].name_deps}">${params[i].name_deps}</a>
+                </div>
+            `
 
-        // div.addEventListener('click', (e) =>{
-        //     e.preventDefault()
-        //     console.log(div.textContent.trim())
-        //     const req = {
-        //         dep: div.textContent.trim(),
-        //         user: getUserToken()
-        //     }
-        //     APIGetSubds(req)
-        // })
-
-        const req = {
-                    dep: div.textContent.trim(),
-                    user: getUserToken()
-                }
-        APIGetSubds(req)
-        const my_div = document.querySelector(".sidenav");
-        my_div.append(div);
+            const req = {
+                dep: div.textContent.trim(),
+                user: getUserToken()
+            }
+            APIGetSubds(req)
+            const my_div = document.querySelector(".sidenav");
+            my_div.append(div);
+        }
     }
-
 }
 
 

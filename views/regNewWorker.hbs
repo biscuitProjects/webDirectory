@@ -10,39 +10,33 @@
             <div class="reg_form">
                 <label class="field_label" for="name">Фамилия, имя, отчество</label>
                 <div class="brakedown">
-                    <input type="text" class="usr_data" id="name" name="fullName" placeholder="Введите ФИО">
+                    <input type="text" class="usr_data" id="name" name="fullName_worker" placeholder="Введите ФИО">
                 </div>
                 
             </div>
             <div class="reg_form">
                 <label class="field_label" for="name">Номер телефона</label>
-                <input type="text" class="usr_data" id="name" name="tel" placeholder="Введите номер">
+                <input type="text" class="usr_data" id="name" name="tel_worker" placeholder="Введите номер">
             </div>
             <div class="reg_form">
-                <label class="field_label" for="dep" name="dep">Депортамент</label>
+                <label class="field_label" for="dep" >Депортамент</label>
                 <br>
-                <select name="dep" id="" class="depSelect">
-                    <option value="Link 1">Link 1</option>
-                    <option value="Link 2">Link 2</option>
-                    <option value="Link 3">Link 3</option>
+                <select name="dep_worker" id="selectForDeps" class="depSelect">
+                    <option value="Link 3" class="optionsForDep">Link 3</option>
                 </select>
             </div> 
             <div class="reg_form">
                 <label class="field_label" for="name" >Подразделение</label>
                 <br>
-                <select  id="" name="subd" class="subdSelect">
+                <select disabled id="selectForSubds" name="subd_worker" class="subdSelect">
                     <option value="Link 1">Link 1</option>
-                    <option value="Link 2">Link 2</option>
-                    <option value="Link 3">Link 3</option>
                 </select>
             </div>
             <div class="reg_form">
                 <label class="field_label" for="name" >Должность</label>
                 <br>
-                <select id="" class="subdSelect" name="employee">
+                <select disabled id="selectForEmployee" class="subdSelect" name="employee_worker">
                     <option value="Link 1">Link 1</option>
-                    <option value="Link 2">Link 2</option>
-                    <option value="Link 3">Link 3</option>
                 </select>
             </div>
             <div class="gender">
@@ -59,4 +53,4 @@
        
     </main>
 </div>
-<script src="/static/js/regNewWorker.js"></script>
+<script async src="/static/js/regNewWorker.js"></script>
