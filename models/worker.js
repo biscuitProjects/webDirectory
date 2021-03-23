@@ -48,6 +48,11 @@ const Worker = sequelize.define("workers", {
       allowNull: false,
       defaultValue: "NULL"
     },
+    gender_worker: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      defaultValue: "NULL"
+    }
 
 }, {
     timestamps: false,

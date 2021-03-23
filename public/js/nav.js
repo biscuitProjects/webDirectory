@@ -18,6 +18,15 @@ goToAdminPanelBtn.addEventListener('click', (e) =>{
 
 console.log('dadsada')
 
+// Перейти на страницу поиска
+
+const goToSearch = document.querySelector('#goToSearch')
+
+goToSearch.addEventListener('click', (e) =>{
+    e.preventDefault()
+    window.location.pathname = '/searchWorkersLimit'
+});
+
 // Выйти из аккаунта
 
 const logOut = document.querySelector('#logOut')

@@ -43,7 +43,7 @@
 }
 
 .SearchBarAndNav{
-  width: 1300px;
+  width: 100vw;
 }
 
 .nav{
@@ -319,7 +319,7 @@ main{
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  border-left: 1px solid #4B4E51;
 }
 
 .name {
@@ -426,6 +426,36 @@ main{
 
 }
 
+@media only screen and (max-width: 1300px) {
+  .icon__svg{
+    height: 52px;
+    height: 52px;
+  }
+
+  .logo{
+    margin: 0 10px;
+  }
+
+  .logo_img{
+    width: 100%;
+    
+  }
+
+  *{
+    font-size: 16px;
+  }
+
+  .labelDesc{
+    font-size: 16px;
+  }
+
+
+  .textDesc{
+    font-size: 16px;
+  }
+}
+
+
 @media only screen and (max-width: 900px) {
   body{
     max-width: 900px;
@@ -449,7 +479,7 @@ main{
   }
 
   .logo_img{
-    width: 400px;
+    width: 350px;
     padding: 0;
   }
 
@@ -457,6 +487,69 @@ main{
     height: 88%;
     padding: 0 0 4px 0;
   }
+
+  .sidenav{
+    width: 40%;
+  }
+
+  .content__page{
+    width: 60%;
+  }
+
+  .contentDesc{
+    flex-direction: column;
+  }
+
+  .workerCardDAM{
+    width: 100%;
+    height: 86px;
+  }
+
+  .workerCard{
+    width: 100%;
+    height: 86px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+
+  header{
+    width: 100%;
+    height: 210px;
+  }
+
+  .header_content{
+    width: 100%;
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .logo{
+    width: 100%;
+    height: 150px;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo_img{
+    width: 80%;
+    padding: 0;
+  }
+
+  .SearchBarAndNav{
+    width: 100%;
+    height: 100px;
+    
+  }
+
+  .nav{
+    height: 40px;
+    justify-content: center;
+  }
+
 }
 
 @media only screen and (max-width: 550px) {
@@ -515,5 +608,23 @@ main{
 
   .sidenav{
     width: 100%;
+  }
+
+
+  .content__page{
+    width: 100vw;
+    max-width: 100vh;;
+  }
+
+  .contentDesc{
+    flex-direction: column;
+  }
+
+  .workerCardDAM{
+    width: 100vw;
+  }
+
+  .workerCard{
+    width: 100vw;
   }
 }

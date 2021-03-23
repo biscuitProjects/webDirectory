@@ -56,6 +56,28 @@ class workerController {
     }
 
 
+    async searchWorkersLimit(req, res){
+        const {fn} = req.body
+        console.log('-- --  ')
+        console.log(req.body)
+        console.log('- -- ')
+        const token = req.headers.authorization.split(' ')[1]
+        const getWorker = await  Worker.findAll({
+            limit: 5,
+            where: {
+                fullName_worker: {
+                    [Sequelize.Op.like]: `%${fn}%`
+                }
+            }
+        })
+
+        if(!getWorker.length){
+            return res.status(400).json({message: `Такого сотрудника нет`})
+        } 
+        res.json({message: getWorker})  
+    }
+
+
     async createNewWorker(req, res){
         const {fullName_worker, tel_worker, dep_worker, subd_worker, employee_worker, gender} = req.body
         // console.log(`${fullName}  ${tel}  ${dep}  ${subd}  ${employee}  ${gender}`)

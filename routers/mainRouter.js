@@ -25,12 +25,30 @@ mainRouter.post('/getWorkersFromSubd', workerController.getWorkersFromSubd)
 // Поиск сотрудников
 mainRouter.post('/searchWorkers', workerController.searchWorkers)
 
+// Поиск сотрудников limit 5
+mainRouter.get('/searchWorkersLimit', async (req, res) => {
+  res.render('search', {
+    title: 'Поиск сотрудника',
+    stylecss: 'search'
+  })
+})
+mainRouter.post('/searchWorkersLimit', workerController.searchWorkersLimit)
+
+
 mainRouter.get('/regNewWorker', async (req, res) => {
   res.render('regNewWorker', {
     title: 'Регистрация нового сотрудника',
     stylecss: 'regNewWorker'
   })
 })
+
+mainRouter.get('/search', async (req, res) => {
+  res.render('search', {
+    title: 'Поиск',
+    stylecss: 'search'
+  })
+})
+
 
 mainRouter.post('/getEmployeePosts', workerController.getEmployeePosts)
 
