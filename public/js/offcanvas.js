@@ -1,32 +1,24 @@
-// Отправка запроса в бд для получения департаментов
-
-// Вызываем и Получаем ответ из запроса  и вызываем функцию вывода 
-// getDeps('/getDeps').then((data)=>{
-//     const abc = data.message
-//     createElemsForDeps(abc)
-// })
-
 // функция вывода информации по подразделеним
 function  createElemsForDeps(params) {
- for (let i = 0; i < params.length; i++){
-     if(params[i].name_deps !== 'global'){
-         const div = document.createElement("div")
-         div.classList.add('card-header', 'item-h1-div')
-         div.setAttribute('role', 'tab')
-         div.innerHTML = `
-               <h5 class="d-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-start align-items-xxl-center mb-0 deps-item-header h-100">
-                    <label  class="toggle btnDep"  id="${params[i].name_deps}" for="main-nav-check" >${params[i].name_deps}</label>
-               </h5>
-         `
-         const req = {
-             dep: params[i].name_deps,
-             user: getUserToken()
-         }
-         APIGetSubds(req)
-         const my_div = document.querySelector(".divContentDeps");
-         my_div.append(div);
+     for (let i = 0; i < params.length; i++){
+          if(params[i].name_deps !== 'global'){
+               const div = document.createElement("div")
+               div.classList.add('card-header', 'item-h1-div')
+               div.setAttribute('role', 'tab')
+               div.innerHTML = `
+                    <h5 class="d-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-start align-items-xxl-center mb-0 deps-item-header h-100">
+                         <label  class="toggle btnDep"  id="${params[i].name_deps}" for="main-nav-check" >${params[i].name_deps}</label>
+                    </h5>
+          `
+          const req = {
+               dep: params[i].name_deps,
+               user: getUserToken()
+          }
+          APIGetSubds(req)
+          const place= document.querySelector(".divContentDeps");
+          place.append(div);
+          }
      }
- }
 }
 
 function  createElemsForSubd(paramsSubd) {
@@ -54,16 +46,7 @@ function  createElemsForSubd(paramsSubd) {
                const req = paramsSubd[i].name_subd
                APIGetWorkersFromSubd(req)
           })
-
-
-          // for (let i = 0; i < paramsWorkers.length; i++){
-          //      const place = document.querySelector(`#${params.name_subd}`);
-          //      const li = document.createElement('li')
-          //      li.textContent = paramsWorkers.fullName_worker
-          //      place.append(li);
-          // }
      }
-
 }
 
 
@@ -104,11 +87,11 @@ function createElemsForWorkers(paramsWorkers, subd) {
                <div class="info-worker">
                     <p class="name h-50W white-label">${paramsWorkers[index].fullName_worker}</p>
                     <p class="position h-50W white-label">${paramsWorkers[index].employee_worker}</p>
-                </div>
-                <div class="phone-worker">
+               </div>
+               <div class="phone-worker">
                     <p class="phone__label h-50W white-label">Телефон</p>
                     <p class="phone__num h-50W white-label">${paramsWorkers[index].tel_worker}</p>
-                </div>
+               </div>
           `
           place.append(li);
           //<a href="#">${paramsWorkers[index].fullName_worker}</a>
@@ -141,8 +124,6 @@ function elementsForDAM(params) {
          workEmployee = data[0].subd_worker
      }
 
-     const contentPage = document.querySelector(".contentDesc")
- 
      const divDirector = document.createElement('div')
 
      divDirector.classList.add('workerCardDAM')
@@ -168,14 +149,14 @@ function elementsForDAM(params) {
 // Отправка запроса в бд для получения подразделений по департаменту
 // АПИ для вызова всех функций, которые нужны для вывода подразделений одного департамента
 function APIGetSubds(depA) {
- const dep = {
-     "dep": depA.dep
- }
- fetchPostData('/getSubdsFromDep', token, dep).then((data)=>{
-     console.log(data.message)
-     const subds = data.message
-     createElemsForSubd(subds)
- })
+     const dep = {
+          "dep": depA.dep
+     }
+     fetchPostData('/getSubdsFromDep', token, dep).then((data)=>{
+          console.log(data.message)
+          const subds = data.message
+          createElemsForSubd(subds)
+     })
 }
 
 
@@ -187,37 +168,28 @@ function APIGetSubds(depA) {
 // Отправка запроса в бд для получения сотрудников по подразделению
 // Вызываем и Получаем ответ из запроса  и вызываем функцию вывода 
 function APIGetWorkersFromSubd(subdA) {
- const subd = {
-     "subd": subdA
- }
- fetchPostData('/getWorkersFromSubd', token, subd).then((data)=>{
-     const workers = data.message
-     createElemsForWorkers(workers, subdA)
- })
+     const subd = {
+          "subd": subdA
+     }
+     fetchPostData('/getWorkersFromSubd', token, subd).then((data)=>{
+          const workers = data.message
+          createElemsForWorkers(workers, subdA)
+     })
 }
-
-
-function getDirecotrFromDB(dep){
-
-}
-
 
 // Поиск сотрудников по фио
 // Вызываем и Получаем ответ из запроса  и вызываем функцию вывода 
 const worker = {
- fullName: "arr"
+     fullName: "arr"
 }
 
 
 function APISearchWorker(fn) {
- fetchPostData('/searchWorkers', token, fn).then((data)=>{
-     const abc = data.message
-     createElemsForWorkers(abc)
- })
+     fetchPostData('/searchWorkers', token, fn).then((data)=>{
+          const abc = data.message
+          createElemsForWorkers(abc)
+     })
 }
-
-
-
 // APISearchWorker('arr')
 
 
@@ -227,22 +199,22 @@ function APISearchWorker(fn) {
 const token = getUserToken()
 // Тут я проверяю авторизован ли пользователь, если то 
 if(!token){
- if(window.location.pathname != 'auth/login'){
-     window.location.pathname ='auth/login'
- }
+     if(window.location.pathname != 'auth/login'){
+          window.location.pathname ='auth/login'
+     }
  
 } else{
- // Тут я могу добавить проверку токена на валидность, которую в будущем можно добавить
+// Тут я могу добавить проверку токена на валидность, которую в будущем можно добавить
 
 
- // Тут я проверяю добавил ли я уже департаменты из скрипта ПВА
- // Если добавил то не вывожу
+// Тут я проверяю добавил ли я уже департаменты из скрипта ПВА
+// Если добавил то не вывожу
 
 
      // Если пользователь авторизован, то выводим департаменты
      getDeps('/getDeps', token).then((data)=>{
-         const abc = data.message
-         createElemsForDeps(abc)
+          const abc = data.message
+          createElemsForDeps(abc)
      })
 }
 
