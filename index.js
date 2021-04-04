@@ -7,24 +7,11 @@ const bodyParser = require('body-parser')
 const serveStatic = require('serve-static')
 
 const { response } = require('express')
-const PORT = 5432
+const PORT = 5222
 
 const app = express()
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.use(express.urlencoded({ extended: true }))
-// console.log(__dirname)
-// const indexDirname = __dirname.lastIndexOf(`\\`)
-// const newDirname = __dirname.substring(0, indexDirname + 1)
-// console.log(newDirname)
-// if(__dirname == 'W:\\buscuitProjects\\webDirectory'){
-//   app.use(express.static('W:\\buscuitProjects\\webDirectory\\public'));
-//   console.log(1)
-// } else{
-//   console.log(2)
-//   app.use(express.static(newDirname + '/public'));
-// }
-
-// app.use(serveStatic(path.join(__dirname, 'public')))
 
 
 

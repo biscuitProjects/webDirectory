@@ -124,3 +124,26 @@ function hasToken(token){
 
 
 
+const postToken = async (url, data) =>{
+    const token = data.token
+    const response = await fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache', 
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+          'Authorization': `Bearer ${token}`
+        },
+        redirect: 'follow', 
+        referrerPolicy: 'no-referrer',
+    })
+    if (!response.ok) {
+        // Сервер вернул код ответа за границами диапазона [200, 299]
+        return Promise.reject(new Error(
+            'Response failed: ' + response.status + ' (' + response.statusText + ')'
+        ))
+    }
+    const body = await response.json()
+    return body
+}

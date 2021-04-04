@@ -16,6 +16,7 @@
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.1",
     "express-validator": "^6.7.0",
+    "firebase-admin": "^9.5.0",
     "git": "^0.1.5",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.2.5",
@@ -23,9 +24,20 @@
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.6",
     "sequelize": "^6.5.0",
-    "serve-static": "^1.14.1"
+    "serve-static": "^1.14.1",
+    "workbox": "0.0.0",
+    "workbox-cacheable-response": "^6.1.2",
+    "workbox-expiration": "^6.1.2",
+    "workbox-routing": "^6.1.2",
+    "workbox-strategies": "^6.1.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.13",
+    "@babel/node": "^7.13.13",
+    "@babel/preset-env": "^7.13.12",
+    "workbox-build": "^6.1.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/biscuitProjects/webDirectory.git"
