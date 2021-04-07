@@ -1,22 +1,47 @@
+let dataSubdDiv = 0
+let dataWorkerDiv = 0
+
+
+
 // функция вывода информации по подразделеним
 function  createElemsForDeps(params) {
      for (let i = 0; i < params.length; i++){
           if(params[i].name_deps !== 'global'){
-               const div = document.createElement("div")
-               div.classList.add('card-header', 'item-h1-div')
-               div.setAttribute('role', 'tab')
+               const div = document.createElement("label")
+               div.classList.add('card-header', 'item-h1-div', 'toggle')
+               div.setAttribute('for', `main-nav-check`)
+               div.setAttribute('id', `${params[i].name_deps}`)
                div.innerHTML = `
                     <h5 class="d-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-start align-items-xxl-center mb-0 deps-item-header h-100">
-                         <label  class="toggle btnDep"  id="${params[i].name_deps}" for="main-nav-check" >${params[i].name_deps}</label>
+                         <label for="main-nav-check" class="btnDep">${params[i].name_deps}</label>
                     </h5>
-          `
-          const req = {
-               dep: params[i].name_deps,
-               user: getUserToken()
-          }
-          APIGetSubds(req)
-          const place= document.querySelector(".divContentDeps");
-          place.append(div);
+               `
+               const req = {
+                    dep: params[i].name_deps,
+                    user: getUserToken()
+               }
+
+               div.addEventListener('click', (e)=>{
+                    const menuDiv = document.querySelector('#menu')
+                    if(menuDiv.classList.contains('animTest')){
+                         menuDiv.classList.remove('animTest')
+                         menuDiv.classList.add('animTestReturn')
+                         dataSubdDiv = 0
+                    }
+                    dataSubdDiv = 1
+                    APIGetSubds(req)
+                    const dataH = div.getAttribute('for')
+                    history.pushState({
+                         note: dataH,
+                         path: `#subds`
+                    }, '', `#subds`)
+                    console.log(history)
+                    
+               })
+
+               // APIGetSubds(req)
+               const place= document.querySelector(".divContentDeps");
+               place.append(div);
           }
      }
 }
@@ -28,13 +53,12 @@ function  createElemsForSubd(paramsSubd) {
      for (let i = 0; i < paramsSubd.length; i++){
           const ul = document.createElement('ul')
           ul.classList.add('ul-worker')
-
           ul.innerHTML = `
           
           <li>
                <label for="${paramsSubd[i].name_subd}" id="${paramsSubd[i].name_subd}-li" class="toggle-sub" style="width: 100%; text-align: start; padding: 0 0 0 20px; " onclick="">${paramsSubd[i].name_subd}</label>
                <input type="checkbox" id="${paramsSubd[i].name_subd}" class="sub-nav-check"/>
-               <ul id="${paramsSubd[i].name_subd}-sub" class="sub-nav">
+               <ul id="${paramsSubd[i].name_subd}-sub" class="sub-nav testaaa">
                     <li class="sub-heading">${paramsSubd[i].name_subd}
                          <label for="${paramsSubd[i].name_subd}" class="toggle" onclick="" title="Back">&#9658;</label>
                     </li>
@@ -43,8 +67,25 @@ function  createElemsForSubd(paramsSubd) {
           `
           place.append(ul)
           document.querySelector(`#${paramsSubd[i].name_subd}-li`).addEventListener('click', (e)=>{
+
+               const divWorker = document.querySelector('.list-subd')
+                    if(divWorker.classList.contains('animTest')){
+                         divWorker.classList.remove('animTest')
+                         divWorker.classList.add('animTestReturn')
+                         dataWorkerDiv = 0
+               }
+               dataWorkerDiv = 1
+               dataSubdDiv = 0
                const req = paramsSubd[i].name_subd
                APIGetWorkersFromSubd(req)
+               // tech_support-sub
+
+               const dataS = ul.getAttribute(`label[for="${paramsSubd[i].name_subd}"`)
+                    history.pushState({
+                         note: dataS,
+                         path: `#workers}`
+                    }, '', `#workers`)
+               console.log(history)
           })
      }
 }
@@ -218,3 +259,42 @@ if(!token){
      })
 }
 
+
+
+window.onpopstate = function(event) {
+     // const stateAttr = event.state.note
+     // console.log(stateAttr)
+     // console.log('---------------------')
+     // console.log(event)
+     const menuDiv = document.querySelector('#menu')
+     const wokrersDiv = document.querySelector('.testaaa')
+     let path = window.location.href
+     console.log(path)
+     if(dataSubdDiv){
+          if(menuDiv.classList.contains('animTestReturn')){
+               menuDiv.classList.remove('animTestReturn')
+          }
+          menuDiv.classList.add('animTest')
+          console.log('---------------------')
+          console.log('menudiv')
+          console.log('---------------------')
+          setTimeout(() => {
+               // menuDiv.classList.remove('animTestReturn')
+               // menuDiv.classList.remove('animTest')
+          }, 500);
+          // menuDiv.classList.add('animTestReturn')
+          dataSubdDiv = 1
+     } else if(dataWorkerDiv){
+          wokrersDiv.classList.add('animTest')
+          console.log('---------------------')
+          console.log('workers')
+          console.log('---------------------')
+          dataWorkerDiv = 0
+          dataSubdDiv = 1
+     }
+
+    
+     // menuDiv.classList.add('hide')
+     
+     
+};

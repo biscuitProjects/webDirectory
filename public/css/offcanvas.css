@@ -1,3 +1,11 @@
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
 .nav-link:hover {
      color: #e94c66 !Important;
    }
@@ -17,7 +25,7 @@
    
 .nav-link {
      font-family: 'Oswald' !important;
-     font-size: 24px !important;
+     font-size: 1.2rem !important;
      text-align: end;
 }
 
@@ -30,12 +38,13 @@
 html, body {
      margin: 0;
      padding: 0;
-     font: 1em/1.75 Verdana, Arial, Helvetica, sans-serif;
+     font: 1em/1.75 'Oswald', sans-serif !important;
    }
    
    body {
      overflow-x: hidden;
      /* -webkit-animation: androidbugfix infinite 1s; */
+     background-image: url('/static/img/background.png');
    }
    
    /* http://timpietrusky.com/advanced-checkbox-hack */
@@ -52,16 +61,16 @@ html, body {
    
    #header label {
      padding: 0 0.125em;
-     font: 2.875em/1.4375em Arial;
+     font: 2.875em/1.4375em 'Oswald', sans-serif !important;
    }
    
    #menu label {
      padding: 0 0.25em;
-     font: 3.125em/1.375em Arial;
+     font: 3.125em/1.375em 'Oswald', sans-serif !important;
    }
    
    #menu .sub-nav .toggle {
-     font: 2em/2em Arial;
+     font: 2em/2em 'Oswald', sans-serif !important;
      -webkit-transform: scale(-1, 1);
      -ms-transform: scale(-1, 1);
      transform: scale(-1, 1);
@@ -82,38 +91,57 @@ html, body {
      color: #fff;
    }
    
-   .container {
-     height: 100px;
-     width: 100%;
-     padding: 0;
-     margin: 0;
-     display: flex;
-     justify-content: flex-end;
-     align-content: center;
-   }
+.container {
+  height: 100px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+}
    
-   #menu, #menu .sub-nav {
-     position: absolute;
-     top: 0;
-     bottom: 0;
-     width: 100%;
-     background: #222;
-     z-index: 9999;
-     left: -100%;
-   }
+#menu, #menu .sub-nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: #222;
+  z-index: 9999;
+  right: 100%;
+}
    
-   .container, #menu, #menu .sub-nav {
-     -webkit-transform: translate(0, 0);
-     -ms-transform: translate(0, 0);
-     transform: translate(0, 0);
-     -webkit-transition: -webkit-transform .25s ease;
-     transition: transform .25s ease;
-   }
+.container, #menu, #menu .sub-nav {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  -webkit-transition: -webkit-transform .25s ease;
+  transition: transform .25s ease;
+}
+
    
-   .list-subd{
-     margin-top: 70px;
-     height: 100%;
-   }
+.animTest {
+  -webkit-transform: translate(0, 0) !important;
+  -ms-transform: translate(0, 0) !important;
+  transform: translate(0, 0) !important;
+  -webkit-transition: -webkit-transform .25s ease !important;
+  transition: transform .25s ease !important;
+}
+
+.animTestReturn {
+  -webkit-transform: translate(100%, 0) !important;
+  -ms-transform: translate(100%, 0) !important;
+  transform: translate(100%, 0) !important;
+  -webkit-transition: -webkit-transform .25s ease !important;
+  transition: transform .25s ease !important;
+}
+   
+   
+
+.list-subd{
+  margin-top: 70px;
+  height: 100%;
+}
 
    #menu ul {
      background: #222;
@@ -126,6 +154,7 @@ html, body {
 
    .ul-worker{
      height: 100%;
+    
    }
    
    #ul-nav-list{
@@ -145,6 +174,8 @@ html, body {
       display: flex;
       flex-direction: row;
       background-color: #222;
+      border-bottom: 1px solid white !important;
+      border-top: 1px solid white !important;
    }
 
    .li-worker-DAM{
@@ -192,7 +223,7 @@ html, body {
    #menu .sub-heading {
      margin-top: 4.0625em;
      padding-left: 1.3125em;
-     color: #999;
+     color: white;
    }
    
    #menu .sub-heading:before {
@@ -205,7 +236,7 @@ html, body {
    }
    
    #menu .toggle-sub {
-     font-size: 1.5rem;
+     font-size: 1.5rem !important;
      display: flex;
      align-items: center;
      color: #fff;
@@ -236,7 +267,12 @@ html, body {
      -ms-transform: translate(100%, 0);
      transform: translate(100%, 0);
    }
-   
+.animTestWorker{
+  -webkit-transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  transform: translate(100%, 0);
+}
+
    .page-content {
      padding: 0 1em 1em;
      max-width: 64em;
@@ -276,7 +312,7 @@ html, body {
    }
    
    a, a:active, a:visited {
-     color: #c30;
+     color: white;
    }
    
    
