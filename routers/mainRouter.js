@@ -78,6 +78,13 @@ mainRouter.get('/versionVladimir', async(req, res) =>{
   })
 })
 
+mainRouter.get('/helpme', async(req, res) =>{
+  res.render('helpme',{
+    title: 'Помощь',
+    stylecss: 'helpme'
+  })
+})
+
 
 // проверка дейстует ли токен
 mainRouter.post('/test', async (req, res) => {

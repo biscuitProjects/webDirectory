@@ -290,19 +290,19 @@ window.onpopstate = function(event) {
 
 
 // form
-const modelSearchWorker = document.querySelector('#model-search-worker')
-const btnSearch = document.querySelector('#btnSearch')
+// const modelSearchWorker = document.querySelector('#model-search-worker')
+// const btnSearch = document.querySelector('#btnSearch')
 
-btnSearch.addEventListener('click', (e) =>{
-    e.preventDefault
-    modelSearchWorker.classList.add('show')
-    modelSearchWorker.style.display = "block";
-}) 
+// btnSearch.addEventListener('click', (e) =>{
+//     e.preventDefault
+//     modelSearchWorker.classList.add('show')
+//     modelSearchWorker.style.display = "block";
+// }) 
 
-const modalSearchIndexCloseBtn = document.querySelector('#modal-search-index-close-btn')
+// const modalSearchIndexCloseBtn = document.querySelector('#modal-search-index-close-btn')
 
-modalSearchIndexCloseBtn.addEventListener('click', (e) =>{
-    e.preventDefault
-    modelSearchWorker.classList.remove('show')
-    modelSearchWorker.style.display = "none";
-})
+// modalSearchIndexCloseBtn.addEventListener('click', (e) =>{
+//     e.preventDefault
+//     modelSearchWorker.classList.remove('show')
+//     modelSearchWorker.style.display = "none";
+// })

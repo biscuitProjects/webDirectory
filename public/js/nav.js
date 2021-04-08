@@ -3,10 +3,8 @@ const goToMainBtn = document.querySelector('#goToMain');
 
 goToMainBtn.addEventListener('click', (e) =>{
     e.preventDefault()
-
-    window.location.pathname = window.location.pathname
+    window.location.pathname = '/'
 });
-
 
 // Перейти в админку
 const goToAdminPanelBtn = document.querySelector('#goToAdminPanel');
@@ -24,6 +22,16 @@ goToSearch.addEventListener('click', (e) =>{
     e.preventDefault()
     window.location.pathname = '/searchWorkersLimit'
 });
+
+// Перейти на страницу помощи
+
+const goToHelpPage = document.querySelector('#goToHelpPage')
+
+goToHelpPage.addEventListener('click', (e) =>{
+    e.preventDefault()
+    window.location.pathname = '/helpme'
+});
+
 
 // Выйти из аккаунта
 
