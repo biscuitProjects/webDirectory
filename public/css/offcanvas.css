@@ -267,11 +267,13 @@ html, body {
      -ms-transform: translate(100%, 0);
      transform: translate(100%, 0);
    }
-.animTestWorker{
-  -webkit-transform: translate(100%, 0);
-  -ms-transform: translate(100%, 0);
-  transform: translate(100%, 0);
-}
+
+   
+  .animTestWorker{
+    -webkit-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
 
    .page-content {
      padding: 0 1em 1em;
@@ -384,8 +386,21 @@ html, body {
      margin-left: 20px;
    }
 
+#model-search-worker {
+  background-color: rgba(0,0,0,0.7);
+}
 
-   
+.main-info-profile{
+  margin-left: 0px;
+  padding: 10px;
+}
+
+.p-main-info-profile{
+  margin-bottom: 0;
+  font-family: Oswald, sans-serif;
+  font-size: 1.4rem;
+}
+
 /* min 1197 */
 
 @media (min-width: 1197px) {

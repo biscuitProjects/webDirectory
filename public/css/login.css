@@ -1,95 +1,263 @@
-/* ОСНОВНЫЕ ТЕГИ */
-
-* {
-    font-family: 'Oswald', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #4B4E51;
-}
-
-body {
-    background-image: url('/img/background.png');
-    background-repeat: repeat;
-    background-size: cover;
-    max-width: 100%;
-}
-
-
-
-
-.auth {
-    margin: 0 auto;
-    position: relative;
-    height: 100vh;
-    max-width: 696px;
-    background-color: #fff;
-    text-align: center;
-    max-height: 90%;
-
-}
-
-.logo__img {
-    margin-top: 300px;
-    height: 108px;
-    width: 439px;
-    max-width: 80%;
-
-}
-
-@media only screen and (max-width: 600px) {
-    .logo__img {
-        margin-top: 200px;    
-    }
+html {
+    color: white !important;
+    font-family: 'Oswald' !important;
+    font-weight: 400 !important;
+    padding: 0px;
+    margin: 0px;
   }
-
-.auth__text {
-    padding-top: 28px;
-    font-weight: 500;
-    font-size: 52px;
-    line-height: 24px;
-    text-transform: uppercase;
-
-}
-.auth__pin {
-    padding-top: 29px;
-}
-
-.auth__pin > div {
-    position: relative;
-    padding-top: 11px;
-}
-
-.pin__text {
+  
+  body{
+    background-image: url('/static/img/background.png');
+  }
+  
+  main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+  }
+  
+  #formLogin{
+    width: 50%;
+    font-family: Oswald, sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  
+  #h1ForLogin {
+    font-weight: 500 !important;
+    font-family: Oswald, sans-serif;
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  .form-label-bs {
     font-weight: 300;
     font-size: 22px;
     line-height: 24px;
     text-transform: uppercase;
-}
-
-.pin {
-    font-size: 40px;
-    text-align: center;
-    width: 311px;
-    height: 40px;
+  }
+  
+  .form-input-pass {
     border: 1px solid #4B4E51;
     border-radius: 10px;
-}
-.auth__btn {
-    padding-top: 28px;
-}
-
-.btn {
-    color: #fff;
-    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  #btn-submit-form {
+    color: white;
     text-transform: uppercase;
     font-weight: 400;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 35.57px;
-
-    padding: auto;
     border-radius: 10px;
-    background-color: #4B4E51;
-    width: 311px;
+    background-color: #4b4e51;
+    width: 100%;
+    text-align: center;
     height: 40px;
+    padding: 0;
+    margin-top: 20px;
+    font-size: 1.4rem;
+  }
+  
+  .form-input-pass:focus {
+    border-color: #e94c66 !Important;
+    box-shadow: 0 0 0 .05rem #e94c66 !Important;
+  }
+  
+  #mainLogo {
+    border-style: none !important;
+    border-color: rgba(255,255,255,0) !important;
+    box-sizing: content-box !important;
+    width: 60%;
+    box-shadow: 0px 0px;
+    background: rgba(255,255,255,0);
+  }
+  
+  
+  
+  #containerLogin {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    width: 40%;
+    margin: 0;padding: 0;
+  }
+  
+  #mainDivForLogin {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: #4b4e51;
+    background: #f8f8f8;
+    height: 100%;width: 100%;
+  }
+  
+  #DivForLogo {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  
+  
+  #divForLoginForm {
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  /* min 1197 */
+  @media (min-width: 1197px) {
+    .nav-link {
+      font-size: 18px !important;
+      text-align: center !important;
+    }
+  }
+  
+  
+  /* 1200 */
+  @media (max-width: 1200px) {
+    #containerLogin {
+      width: 50% !important;
+    }
+  }
+  
+  
+  /* 992 */
+  @media (max-width: 992px) {
+    #h1ForLogin {
+      font-size: 1rem;
+    }
+  
+    #containerLogin {
+      width: 100% !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #mainDivForLogin {
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+  
+  /* 550 */
+  @media (max-width: 550px) {
+    #navCon {
+      flex-direction: column !important;
+      justify-content: flex-end !important;
+      color: rgb(255,255,255);
+    }
+  
+    #navbarResponsive {
+      width: 100%;
+    }
+  
+    #navBarToggle {
+      float: right !important;
+      margin-right: 14px;
+    }
+  
+    #divForNavBarToggle {
+      width: 100%;
+    }
+  
+    #h1ForLogin {
+      font-size: 2rem !important;
+    }
+  
+    #mainLogo {
+      width: 90% !important;
+    }
+  
+    #formLogin {
+      width: 90% !important;
+    }
+  }
+  
+  /* 500 */
+  @media (max-width: 500px) {
+    #containerLogin {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  }
+  
+  /* 400 */
+  @media (max-width: 400px) {
+    #divForMainLogo {
+      margin-bottom: 10px;
+    }
+  
+    #navbarResponsive {
+      margin-top: 10px !important;
+    }
+  }
+  
+  
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/oswald/v36/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUtiZTaR.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/oswald/v36/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUJiZTaR.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/oswald/v36/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUliZTaR.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/oswald/v36/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUhiZTaR.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/oswald/v36/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiZQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+.toast-error-login{
+    width: 300px;
+    height: 70px;
+    overflow: auto;
+    margin: auto;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 999;
+    opacity: 100 !important;
+    background-color: white !important;
+}
+
+.me-auto{
+    font-size: 1.2rem;
+    color: red !important;
+}
+
+
+.toast-header{
+    height: 100% !important;
 }

@@ -225,15 +225,6 @@ const worker = {
 }
 
 
-function APISearchWorker(fn) {
-     fetchPostData('/searchWorkers', token, fn).then((data)=>{
-          const abc = data.message
-          createElemsForWorkers(abc)
-     })
-}
-// APISearchWorker('arr')
-
-
 
 
 // Получаю токен из LocaStorage
@@ -294,7 +285,24 @@ window.onpopstate = function(event) {
      }
 
     
-     // menuDiv.classList.add('hide')
-     
-     
+     // menuDiv.classList.add('hide')   
 };
+
+
+// form
+const modelSearchWorker = document.querySelector('#model-search-worker')
+const btnSearch = document.querySelector('#btnSearch')
+
+btnSearch.addEventListener('click', (e) =>{
+    e.preventDefault
+    modelSearchWorker.classList.add('show')
+    modelSearchWorker.style.display = "block";
+}) 
+
+const modalSearchIndexCloseBtn = document.querySelector('#modal-search-index-close-btn')
+
+modalSearchIndexCloseBtn.addEventListener('click', (e) =>{
+    e.preventDefault
+    modelSearchWorker.classList.remove('show')
+    modelSearchWorker.style.display = "none";
+})

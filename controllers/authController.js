@@ -35,6 +35,7 @@ class authController {
 
     async login(req, res) {
         try {
+            console.log(req.body)
             const {password} = req.body
             console.log(password)
             // Берем всех пользователей из БД
@@ -56,9 +57,9 @@ class authController {
                 const username = candidate[indexCandidate].username
                 const role = candidate[indexCandidate].role
                 const token = smallServerScripts.generateAccessToken(username, role)
-                res.render('login-success', {
+                res.json({message:{
                     username, token
-                })
+                }})
                 // res.json({message : {username, token}})
             }
 

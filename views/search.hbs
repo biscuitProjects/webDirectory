@@ -1,48 +1,24 @@
-
-<div class="containerRegNewWorker">
-    <main class="content">
-        <div class="logo">
-            <img src="static/img/logoReg.svg" alt="Нету? А где оно?" class="logo_svg">
-        </div>
-        <h1 class="reg">Поиск</h1> 
-        
-        <div class="searchDiv">
-            <p class="textForSearch">Введите ФИО сотрудника</p>
-            <input type="search" name="searchWorker" placeholder="Введите ФИО" class="usr_data" id="searchWorker">
-        </div>
-
-        <div class="contentSearch">
-            <div class="workerCardSearch">
-                {{!-- <div class="icon">
-                    <img class="icon__svg" src="/img/male.svg" alt="Мужчина">
-                </div>
-                <div class="infoDAM">
-                    <p class="labelDesc">${mode} ${workEmployee} </p>
-                    <p class="textDesc">${element.fullName_worker}</p>
-                </div>
-                <div class="phoneDAM">
-                    <p class="phone__labelDAM">Телефон</p>
-                    <p class="phone__num">${element.tel_worker}</p>
-                </div>      --}}
-                <div class="upperContentCard">
-                     <div class="mainInfoDAM">
-                        <p class="textDescFN">ФИО: Radion DSADSA dsasda aaaa</p>
+	<main class="w-100" style="height: 600px; background: url(&quot;/static/img/background.png&quot;);">
+        <div class="modal fade" role="dialog" tabindex="-1" id="model-search-worker">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" id="modal-index">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="font-family: Oswald, sans-serif;font-size: 2rem;">Поиск сотрудника</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="modal-search-index-close-btn"></button>
+                    </div>
+                    <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+					<label class="form-label form-label-search" style="font-family: Oswald, sans-serif;text-align: left;font-size: 1.5rem;">Введите фио сотрудника</label>
+					<input type="text" id="input-search-worker" class="form-input-regWorker input-focus-search form-control">
+				</div>
+                    <div class="modal-footer">
+                        <div class="d-flex search-worker">
+                            <div class="main-info-profile" style="margin-left: 0px;padding: 10px;">
+                                <p class="p-main-info-profile black-p" style="margin-bottom: 0;font-family: Oswald, sans-serif;font-size: 1.4rem;">Должность&nbsp; Департамент, Подразделение</p>
+                                <p class="p-main-info-profile black-p" style="margin-bottom: 0;font-size: 1.4rem;font-family: Oswald, sans-serif;">Владимир Ким&nbsp; &nbsp; &nbsp;87477477444</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="lowerContentCard">
-                    <div class="infoDAM">
-                        <p class="labelDesc">ДЕПАРТАМЕНТ: IT</p>
-                        <p class="textDesc">Подразделение: tech sup</p>
-                    </div>
-                    <div class="phoneDAM">
-                        <p class="phone__labelDAM">Телефон</p>
-                        <p class="phone__num">8747465465</p>
-                    </div> 
-                </div>
-                   
             </div>
         </div>
-
-    </main>
-</div>
+	</main>
 <script async src="/static/js/search.js"></script>

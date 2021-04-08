@@ -1,26 +1,5 @@
-
-	<nav class="navbar navbar-dark navbar-expand-lg bg-dark d-flex flex-column" id="mainNav">
-		<div class="container-fluid bz-bx" id="navCon">
-		    <div class="text-center d-flex justify-content-center" id="divForMainLogo" style="height: 70px;">
-			   <img class="img-fluid d-flex" id="mainLogo-1" src="/static/img/logo.svg" height="70" alt="logo" style="margin-bottom: 10px;height: 70px;">
-		    </div>
-		    <div id="divForNavBarToggle">
-			   <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" id="navBarToggle" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="background: rgba(254,209,54,0);">
-				  <i class="fa fa-reorder" style="font-size: 34px;"></i>
-			   </button>
-		    </div>
-		    <div class="collapse navbar-collapse d-xxl-flex justify-content-xxl-end" id="navbarResponsive">
-			   <ul class="navbar-nav d-xxl-flex ms-auto justify-content-xxl-end align-items-xxl-start text-uppercase" id="ul-nav-list">
-				  <li class="nav-item"><a class="nav-link active" href="#services" style="font-family: Oswald, sans-serif;">Главная</a></li>
-				  <li class="nav-item"><a class="nav-link" id="btnSearch">Поиск</a></li>
-				  <li class="nav-item"><a class="nav-link" href="#about">Админка</a></li>
-				  <li class="nav-item"><a class="nav-link" href="#help">Помощь</a></li>
-				  <li class="nav-item"><a class="nav-link" href="#team">Выйти</a></li>
-			   </ul>
-		    </div>
-		</div>
-	</nav>
 	
+
 	<main class="w-100" style="height: 600px; background: url(&quot;/static/img/background.png&quot;);">
 			<input type="checkbox" id="main-nav-check"/>
 			<div id="menu" data-mdb-toggle="animation" data-mdb-animation-reset="true" data-mdb-animation="slide-right" style="animation-duration: 500ms;"> 
@@ -36,6 +15,32 @@
 				
 			</div><!-- closing ".page-content" -->
 	</main>
+	<footer>
+        <div class="modal fade" role="dialog" tabindex="-1" id="model-search-worker">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" id="modal-index">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="font-family: Oswald, sans-serif;font-size: 2rem;">Поиск сотрудника</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="modal-search-index-close-btn"></button>
+                    </div>
+                    <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+					<label class="form-label form-label-search" style="font-family: Oswald, sans-serif;text-align: left;font-size: 1.5rem;">Введите фио сотрудника</label>
+					<input type="text" id="input-search-worker" class="form-input-regWorker input-focus-search form-control">
+				</div>
+                    <div class="modal-footer">
+                        <div class="d-flex search-worker">
+                            <div class="main-info-profile" style="margin-left: 0px;padding: 10px;">
+                                <p class="p-main-info-profile black-p" style="margin-bottom: 0;font-family: Oswald, sans-serif;font-size: 1.4rem;">Должность&nbsp; Департамент, Подразделение</p>
+                                <p class="p-main-info-profile black-p" style="margin-bottom: 0;font-size: 1.4rem;font-family: Oswald, sans-serif;">Владимир Ким&nbsp; &nbsp; &nbsp;87477477444</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     
-<script src="/static/js/bootstrap.min.js"></script>
+{{!-- <script src="/static/js/bootstrap.min.js"></script> --}}
 <script async src="/static/js/offcanvas.js"></script>
+
+{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/js/bootstrap.bundle.min.js"></script> --}}
+

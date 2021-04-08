@@ -1,22 +1,31 @@
     {{!-- <link rel="stylesheet" href="/static/css/login.css"> --}}
 
-        <div class="auth">
-            <form action="login" method="post">
-                <div class="logo">
-                    <img class="logo__img" src="/static/img/logoLogin.svg" alt="Бисквит кондитерский дом">
-                </div>
-                <div class="auth__text">Авторизация</div>
-                <div class="auth__pin">
-                    <label class="pin__text" for="pin_name" >Введите свой пин-код</label>
-                    <div>
-                        <input type="text" maxlength="4" minlength="4" class="pin myValidate" id="pin__name" name="password" title="Введите только 4 цифры" pattern="[0-9]{4,4}">
-                    </div>
-                </div>
-                <div class="auth__btn">
-                    <input type="submit" class="btn" value="Войти">
-                </div>
-            </form>
+<main class="d-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center align-items-center justify-content-xl-center justify-content-xxl-center">
+    <div class="container d-xl-flex d-xxl-flex align-items-center justify-content-xxl-center" id="containerLogin">
+        <div class="d-xl-flex d-xxl-flex flex-column justify-content-xl-center align-items-xl-center justify-content-xxl-center align-items-xxl-center" id="mainDivForLogin">
+            <div class="d-xl-flex d-xxl-flex justify-content-xl-center justify-content-xxl-center" id="DivForLogo">
+                <img id="mainLogo" src="/static/img/logoLogin.svg" alt="logo">
+            </div>
+            <div>
+                <h1 class="text-uppercase" id="h1ForLogin" >Авторизация</h1>
+            </div>
+            <div class="d-lg-flex d-xl-flex d-xxl-flex justify-content-lg-center justify-content-xl-center justify-content-xxl-center" id="divForLoginForm" style="margin-top: 20px;width: 100%;">
+                <form id="formLogin" >
+                    <label class="form-label form-label-bs">Введите свой пинкод</label>
+                    <input class="form-control form-input-pass" type="password" inputmode="numeric" minlength="4" maxlength="4" required="" >
+                    <input type="submit" id="btn-submit-form" class="btn" value="Войти">
+                </form>
+            </div>
         </div>
+    </div>
+</main>
+
+<div class="toast toast-error-login hide" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+        <strong class="me-auto">Вы ввели неверный пинкод</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+</div>
 {{!-- 
   <h2> {{username}} </h2>
   <h2> {{token}} </h2> --}}

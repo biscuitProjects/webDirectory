@@ -16,8 +16,6 @@ goToAdminPanelBtn.addEventListener('click', (e) =>{
     window.location.pathname = '/regNewWorker'
 });
 
-console.log('dadsada')
-
 // Перейти на страницу поиска
 
 const goToSearch = document.querySelector('#goToSearch')
@@ -35,3 +33,5 @@ logOut.addEventListener('click', (e) =>{
 
     getUserToken(true)
 })
+
+

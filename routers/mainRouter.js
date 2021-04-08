@@ -19,10 +19,10 @@ admin.initializeApp({
 // app.use(express.static(path.join(__dirname, 'public')))
 
 mainRouter.get('/', async (req, res) => {
-    res.render('index', {
+    res.render('offcanvas', {
       title: 'Авторизация',
       isIndex: true,
-      stylecss: 'index'
+      stylecss: 'offcanvas'
     })
 })
 // // Получаем департамент из бд
