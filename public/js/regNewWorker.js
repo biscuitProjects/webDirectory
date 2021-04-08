@@ -24,15 +24,6 @@ for (const btn of dropdown) {
   }  
 } 
 
-
-const gotoMainFromReg = document.querySelector('.logo_svg')
-
-gotoMainFromReg.addEventListener('click', (e) =>{
-  e.preventDefault()
-  window.location.pathname = '/'
-})
-
-
 // Создаёт опции в селекте для департаментов
 function createElementForSelectDep(id, data){
   for (let index = 0; index < data.length; index++) {
@@ -50,6 +41,8 @@ function createElementForSelectDep(id, data){
 
 // Создаёт опции в селекте для subd
 function createElementForSelectSubd(id, data){
+  clearOptionInSubdSelect()
+
   for (let index = 0; index < data.length; index++) {
       const opt = document.createElement('option')
       opt.classList.add('optionsForSubd')
@@ -61,6 +54,7 @@ function createElementForSelectSubd(id, data){
 
 // Создаёт опции в селекте для employee posts
 function createElementForSelectEmployee(id, data){
+  clearOptionInEmployeeSelect()
   for (let index = 0; index < data.length; index++) {
     if(data[index].name !== 'global'){
       const opt = document.createElement('option')
@@ -106,6 +100,7 @@ function GetSubdForRegNW(depA) {
       const abc = data.message
       console.log(abc)
       createElementForSelectSubd(optionsSubd, abc)
+      
   })
 }
 
@@ -124,3 +119,38 @@ function  GetEmployeeForRegNW(data) {
     createElementForSelectEmployee(selectForEmployee, abc)
   })
 }
+
+function clearOptionInEmployeeSelect() {
+  for (let index = 0; index < selectForEmployee.length; index++) {
+    const element = selectForEmployee[index];
+    element.remove()
+  }
+}
+
+function clearOptionInSubdSelect() {
+  for (let index = 0; index < optionsSubd.length; index++) {
+    const element = optionsSubd[index];
+    element.remove()
+    
+  }
+}
+
+document.querySelector("#input-tel-worker").onkeydown = function(e){
+  if((e.which >=48 && e.which <=57)  // цифры
+      || (e.which >=96 && e.which <=105)  // num lock
+      || e.which==8 // backspace
+      || (e.which >=37 && e.which <=40) // стрелки
+      || e.which==46) // delete 
+    {
+      return true;
+    } else {
+      return false;            
+  }	
+}
+
+const form = document.getElementById('formLogin');
+  form.addEventListener("keydown", ({key}) => {
+    if (key === "Enter"){
+      form.submit()
+    } // Handle press
+})

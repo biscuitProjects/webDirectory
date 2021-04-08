@@ -1,53 +1,48 @@
-{{!-- <link rel="stylesheet" href="static/css/regNewWorker.css"> --}}
-    
-<div class="containerRegNewWorker">
-    <main class="content">
-        <div class="logo">
-            <img src="static/img/logoReg.svg" alt="Нету? А где оно?" class="logo_svg">
-        </div>
-        <h1 class="reg">Регистрация</h1> 
-        <form class="data" action="regNewWorker" method="post">
-            <div class="reg_form">
-                <label class="field_label" for="name">Фамилия, имя, отчество</label>
-                <input type="text" class="usr_data" id="name" name="fullName_worker" placeholder="Введите ФИО">
+
+
+<main class="d-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center align-items-center justify-content-xl-center justify-content-xxl-center align-items-xxl-start" style="background: url(&quot;/static/img/background.png&quot;);">
+    <div class="container-lg d-xl-flex d-xxl-flex align-items-center justify-content-xxl-center align-items-xxl-starty h-100" id="containerLogin">
+        <div class="d-xl-flex d-xxl-flex flex-column justify-content-xl-center align-items-xl-center justify-content-xxl-start align-items-xxl-center" id="mainDivForLogin" style="">
+            <div class="d-xl-flex d-xxl-flex justify-content-xl-center justify-content-xxl-center" id="DivForLogo">
+                <img id="mainLogo" src="/static/img/logoB.svg" alt="logo">
             </div>
-            <div class="reg_form">
-                <label class="field_label" for="name">Номер телефона</label>
-                <input type="text" class="usr_data" id="name" name="tel_worker" placeholder="Введите номер">
+            <div>
+                <h1 class="text-uppercase" id="h1ForLogin">Регистрация сотрудника</h1>
             </div>
-            <div class="reg_form">
-                <label class="field_label" for="dep" >Депортамент</label>
-                <br>
-                <select name="dep_worker" id="selectForDeps" class="depSelect">
-                    <option value="Link 3" class="optionsForDep">Link 3</option>
-                </select>
-            </div> 
-            <div class="reg_form">
-                <label class="field_label" for="name" >Подразделение</label>
-                <br>
-                <select disabled id="selectForSubds" name="subd_worker" class="subdSelect">
-                    <option value="Link 1">Link 1</option>
-                </select>
-            </div>
-            <div class="reg_form">
-                <label class="field_label" for="name" >Должность</label>
-                <br>
-                <select disabled id="selectForEmployee" class="subdSelect" name="employee_worker">
-                    <option value="Link 1">Link 1</option>
-                </select>
-            </div>
-            <div class="gender">
-                <p>Пол</p>
-                    <div class="gender_value">
-                        <p><input type="radio" class="radioBtn" name="gender" value="male">Муж.</p>
-                        <p><input type="radio" class="radioBtn" name="gender" value="female">Жен.</p>
+            <div class="d-lg-flex d-xl-flex d-xxl-flex justify-content-lg-center justify-content-xl-center justify-content-xxl-center" id="divForLoginForm">
+                <form id="formLogin" style="width: 50%;">
+                    <label class="form-label form-label-bs">фио</label>
+                    <input class="form-control form-input-regWorker input-focus-bs" type="text" name="fullName_worker" placeholder="Введите ФИО" required="">
+                    <label class="form-label form-label-bs">Номер телефона</label>
+                    <input class="form-control form-input-regWorker input-focus-bs" maxlength="12" minlength="12" type="tel" id="input-tel-worker" name="tel_worker" placeholder="Введите номер" required="" inputmode="tel">
+                    <label class="form-label form-label-bs">ДЕПАРТАМЕНТ</label>
+                    <select class="form-select form-input-regWorker input-focus-bs" name="dep_worker" id="selectForDeps" required="">
+                        
+                    </select>
+                    <label class="form-label form-label-bs">Подразделение</label>
+                    <select  disabled id="selectForSubds" name="subd_worker" class="form-select form-input-regWorker input-focus-bs" required="">
+                        
+                    </select>
+                    <label class="form-label form-label-bs">должность</label>
+                    <select disabled id="selectForEmployee" class="form-select form-input-regWorker input-focus-bs" name="employee_worker" required="">
+                        
+                    </select>
+                    <label class="form-label form-label-bs">Пол</label>
+                    <div>
+                        <label class="form-label label-radio">
+                            Муж.
+                            <input type="radio" class="radioRegNewWorker" name="gender" value="Муж." required="" checked="">
+                        </label>
+                        <label class="form-label">
+                            Жен.
+                            <input type="radio" class="radioRegNewWorker" name="gender" value="Муж." required="">
+                        </label>
                     </div>
+                    <input  class="btn" id="btn-submit-form" type="submit" value="Зарегистрировать">
+                </form>
             </div>
-            <div class="btn">
-                <input class="btn_form" type="submit" value="Зарегистрировать">
-            </div>
-        </form>
-       
-    </main>
-</div>
+        </div>
+    </div>
+</main>
+
 <script async src="/static/js/regNewWorker.js"></script>

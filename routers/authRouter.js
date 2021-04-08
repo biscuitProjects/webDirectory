@@ -18,7 +18,8 @@ router.post('/login', controller.login)
 router.get('/login', async (req, res) =>{
     res.render('login', {
         title: 'Авторизация1',
-        stylecss: 'login'
+        stylecss: 'login',
+        isActive: 1
     })
 })
 router.post('/users', controller.checkUserToken)

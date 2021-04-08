@@ -100,6 +100,7 @@ class workerController {
             director_worker,
             gender
         })
+        console.log('31321321')
         res.redirect('/regNewWorker')
     }
 

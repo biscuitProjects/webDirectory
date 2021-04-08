@@ -1,288 +1,371 @@
-/* Применение общих параметров */
-/* ================================================= */
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Oswald';
+main{
+    width: 100%;
+    height: 90vh;
+    max-height: 100vh;
+}
+
+.form-input-regWorker {
+    border: 1px solid #4B4E51;
+    border-radius: 10px;
+    margin: 5px 0 10px 0;
+    width: 90% !important;
+    padding: 6px 12px;
+    color: #4b4e53;
+  }
+  
+  .form-input-pass:focus {
+    border-color: #e94c66 !Important;
+    box-shadow: 0 0 0 .05rem #e94c66 !Important;
+  }
+  
+  .input-focus-bs:focus {
+    border-color: #e94c66 !Important;
+    box-shadow: 0 0 0 .05rem #e94c66 !Important;
+    font-family: Oswald, sans-serif;
+  }
+  
+  .radioRegNewWorker {
+    margin: 0 10px;
+  }
+  
+  .label-radio {
+    margin: 0 10px;
+  }
+  
+  .form-input-pass {
+    border: 1px solid #4B4E51;
+    border-radius: 10px;
+  }
+  
+  * {
+    box-sizing: content-box !important;
+  }
+  
+  
+  html {
+    color: white !important;
+    font-family: 'Oswald' !important;
+    font-weight: 400 !important;
+  }
+  
+  
+  .active {
+    color: #e94c66 !Important;
+  }
+  
+  
+  
+  .form-label-bs {
     font-weight: 300;
     font-size: 22px;
-    max-width: 1920px;
-    color: #4B4E51;
-}
-
-/* containers style */
-
-.containerRegNewWorker {
-    background-image: url(/img/background.png);
-    background-repeat: repeat;
-    background-size: cover;
-    width: 100%;
-    text-align: center;
-}
-
-
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    background-color: #fff;
-    height: 100%;
-    width: 700px;
-}
-
-/* logo geo style */
-
-.logo {
-    padding-top: 130px;
-}
-
-/* Form elements style */
-
-.reg {
-    text-transform: uppercase;
-    position: relative;
-    font-weight: 500;
-    font-size: 52px;
-    line-height: 24px;
-    color: #4B4E51;
-    padding-top: 35px;
-}
-
-.reg_form {
-    padding-top: 25px;
-    width: 100%;
-}
-
-.field_label {
-    font-size: 22px;
     line-height: 24px;
     text-transform: uppercase;
-    color: #4B4E51;
-}
-
-.data {
-    position: relative;
+    margin-top: 10px;
+    font-family: Oswald, sans-serif;
     text-align: center;
-    width: 400px;
-    padding-top: 35px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.usr_data {
+    font-size: 1.5rem;
+  }
+  
+  
+  
+  #btn-submit-form {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-radius: 10px;
+    background-color: #4b4e51;
     width: 100%;
+    text-align: center;
     height: 40px;
-    border-radius: 10px 10px 10px 10px;
-    font-size: 18px;
-    color: #4B4E51;
-    background-color: #fff;
-}
-
-/* Gender style */
-/* ================================================================================== */
-
-.gender {
-    color: #4B4E51;
-    padding-top: 22px;
-    
-}
-
-.gender_value {
+    padding: 0;
+    margin-top: 20px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  
+  
+  main {
     display: flex;
-    color: #5F6377;
-}
-
-.gender_value > p {
-    padding-right: 22px;
-}
-
-/* Select */
-/* ================================================================================== */
-
-
-.depSelect{
-    width: 100%;
-    margin: 10px 0 0 0;
-    display: block;
-    background: none;
-    border-radius: 10px 10px 10px 10px;
-    line-height: 36px;
-    border: 2px solid #4B4E51;
-    outline: none;
-    padding: 3px 0;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  #containerLogin {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 40%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  
+  .fa.fa-bars {
+    width: 100%!important;
+    height: 100% !important;
+  }
+  
+  
+  
+  
+  #h1ForLogin {
+    font-weight: 500 !important;
+    font-size: 62px;
+    font-family: Oswald, sans-serif;
+    font-size: 1.5rem;
     text-align: center;
-    text-align-last:center; 
-    color: #4B4E51;
-    
-}
-
-
-.subdSelect{
-    width: 100%;
-    margin: 10px 0 0 0;
-    display: block;
-    background: none;
-    border-radius: 10px 10px 10px 10px;
-    line-height: 36px;
-    border: 2px solid #4B4E51;
-    outline: none;
-    padding: 3px 0;
-    text-align: center;
-    text-align-last:center; 
-}
-
-/* radion btn  */
-
-.radioBtn{
-    margin: 0 5px;
-}
-
-/* Button style */
-/* ======================================================================================= */
-
-.btn {
-    padding-top: 30px;
-    bottom: 128px;
-
-}
-
-.btn_form {
-    border-radius: 10px 10px 10px 10px;
-    padding: 0px 64px;
-    margin-bottom: 128px;
-
-    color: #fff;
-    background-color: #4B4E51;
+  }
+  
+  
+  #btn-submit-form {
+    color: white;
+    text-transform: uppercase;
     font-weight: 400;
     font-size: 24px;
-    line-height: 36px;
+    border-radius: 10px;
+    background-color: #4b4e51;
+    width: 100%;
     text-align: center;
-    text-transform: uppercase;
-    outline: none;
-
-
-
+  }
+  
+  
+  #mainLogo {
+    border-style: none !important;
+    border-color: rgba(255,255,255,0) !important;
+    box-sizing: content-box !important;
+    width: 60%;
+    box-shadow: 0px 0px;
+    background: rgba(255,255,255,0);
+  }
+  
+  #mainDivForLogin {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: #4b4e51;
+    background: #f8f8f8;
+    height: 100%;
+    width: 100%;
+  }
+  
+  #DivForLogo {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 10px;
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  
+  #divForLoginForm {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .bz-bx{
+    box-sizing: border-box !important;
+  }
+  
+  .nav-link:hover {
+    color: #e94c66 !Important;
+  }
+  
+#ul-nav-list{
+    padding: 0 20px 0 0;
 }
 
-.active {
-    background-color: #4B4E51;
-    color: white;
+  .navbar-nav {
+    float: right;
   }
-
-.dropdown_container {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    width: 310px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.reg_form a {
-    padding-top: 5px;
-    text-decoration: none;
-}
-
-  .reg_form a, .usr_data {
-    font-size: 18px;
-    color: #4B4E51;
-    display: block;
-    background: none;
-    width: 400px;
-    text-align: center;
-    outline: none;
+  
+  
+  #mainNav {
+    padding: 10px 0;
+    width: 100%;
+    background-color: rgb(75, 78, 81) !important;
   }
-
-
-
-  @media only screen and (max-width: 900px) {
-    .containerRegNewWorker {
-        width: 700px;
+  
+  
+  .nav-link {
+    font-family: 'Oswald' !important;
+    font-size: 24px !important;
+    text-align: end;
+  }
+  
+  #navbar-ul-list{
+    margin: 0;
+    padding: 0 20px 0 0;
+  }
+  
+  
+  /* min 1197 */
+  
+  @media (min-width: 1197px) {
+    .nav-link {
+      font-size: 18px !important;
+      text-align: center !important;
     }
-
-    .data{
-        width: 400px;
-        /* background-color: rebeccapurple; */
-    }
-
-    .reg_form{
-        width: 100%;
-    }
-
-    .usr_data{
-        width: 100%;
-    }
-
-    .btn_form{
-        width: 70vw;
-    }
-
-    .logo{
-        padding: 20px 0;
+  
+  }
+  
+  /* min 1000 */
+  
+  @media (min-width: 1000px) {
+    #mainNav {
+      display: flex !important;
     }
   }
-
-
-  @media only screen and (max-width: 450px) {
-
-    body{
-        max-width: 450px;
+  
+  /* 1440 */
+  
+  @media (max-width: 1440px) {
+    #DivForLogo {
+      height: 80px;
     }
-
-    .containerRegNewWorker {
-        max-width: 100vw;
+  
+    #containerLogin {
+        width: 60% !important;
     }
-
-    main{
-        max-width: 100vw;
+  }
+  
+  
+  /* 1200 */
+  
+  
+  @media (max-width: 1200px) {
+    #containerLogin {
+      width: 60% !important;
     }
-
-    .logo{
-        width: 60vw;
-        padding: 10px;
+  }
+  
+  /* 992 */
+  
+  @media (max-width: 992px) {
+    #h1ForLogin {
+      font-size: 1rem;
     }
-
-    .logo_svg{
-        width: 60vw;
+  
+    #containerLogin {
+        width: 100% !important;
+        padding: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
     }
-
-    .reg{
-        font-size: 34px;
+  
+    #DivForLogo {
+        margin-top: 10px;
     }
-
-    .data{
-        width: 60vw;
-        /* background-color: rebeccapurple; */
+  }
+  
+  
+  /* 768 */
+  
+  @media (max-width: 768px) {
+    #mainDivForLogin {
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
-
-    .reg_form{
+  }
+  
+  
+  /* 580 */
+  
+  
+  @media (max-width: 580px) {
+    #formLogin {
+      width: 90% !important;
+    }
+  }
+  
+  /* 550 */
+  
+  @media (max-width: 550px) {
+  
+    #formLogin {
+        width: 90% !important;
+    }
+  
+    #divForNavBarToggle {
         width: 100%;
     }
-
-    .usr_data{
+  
+    #navbarResponsive {
         width: 100%;
     }
-
-    .btn_form{
-        width: 60vw;
+  
+    #navBarToggle {
+        float: right !important;
+        margin-right: 14px;
+    }
+  
+    #navCon {
+        flex-direction: column !important;
+        justify-content: flex-end !important;
+        color: rgb(255,255,255);
         padding: 0;
-        font-size: 20px;
     }
-    
+  
+    #h1ForLogin {
+        font-size: 2rem !important;
+    }
+  
+    #mainLogo {
+        width: 90% !important;
+    }
   }
-
-
-.subdSelect:disabled{
-    
-    opacity: 50%;
-
-}
-
-
-
-
+  
+  
+  /* 500 */
+  
+  @media (max-width: 500px) {
+    #containerLogin {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  }
+  
+  
+  /* 440 */
+  
+  
+  @media (max-width: 440px) {
+    main {
+      height: 100% !important;
+    }
+  
+    #mainDivForLogin {
+        padding-top: 20px !important;
+    }
+  }
+  
+  /* 400 */
+  
+  @media (max-width: 400px) {
+    #navbarResponsive {
+      margin-top: 10px !important;
+    }
+  
+    #divForMainLogo {
+        margin-bottom: 10px;
+    }
+  
+    #containerLogin {
+        margin-bottom: 10px !important;
+    }
+  }
+  
+  /* 320 */
+  
+  
+  @media (max-width: 320px) {
+    #mainLogo-1 {
+      width: 90%;
+    }
+  }
+  

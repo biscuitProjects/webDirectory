@@ -1,7 +1,11 @@
 {{> head}}
 
 <body>
-    {{if(window)  > nav}}
+    {{#if isActive}}
+       
+    {{else}}
+         {{> nav}}
+    {{/if}}
 
   {{{ body }}}
 
