@@ -111,7 +111,7 @@ class authController {
             } else{
                 console.log(data)
                 res.json({message: 'true'})
-            }
+            } 
         })
 
 
