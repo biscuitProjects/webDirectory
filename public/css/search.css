@@ -398,6 +398,7 @@ main{
   #model-search-worker {
     background-color: rgba(0,0,0,0.7);
     padding: 0 !important;
+    width: 60% !important;
   }
   
   .main-info-profile{

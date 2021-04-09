@@ -19,12 +19,22 @@ admin.initializeApp({
 // app.use(express.static(path.join(__dirname, 'public')))
 
 mainRouter.get('/', async (req, res) => {
-    res.render('offcanvas', {
-      title: 'Авторизация',
+    res.render('index', {
+      title: 'Справочник',
       isIndex: true,
-      stylecss: 'offcanvas'
+      stylecss: 'index'
     })
 })
+
+
+mainRouter.get('/testindex', async (req, res) => {
+  res.render('index', {
+    title: 'Авторизация',
+    isIndex: true,
+    stylecss: 'index'
+  })
+})
+
 // // Получаем департамент из бд
 mainRouter.get('/getDeps', workerController.getDeps)
 // // Получаем все подразделения департамента
@@ -86,7 +96,12 @@ mainRouter.get('/helpme', async(req, res) =>{
 })
 
 
-// проверка дейстует ли токен
+// Компонены
+
+mainRouter.get('/getNav', )
+
+
+// тестовый запрос, для push
 mainRouter.post('/test', async (req, res) => {
 
   try {

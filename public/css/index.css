@@ -1,630 +1,401 @@
-/* PAGE STYLE */
-/* ============================================================== */
-
-/* обнулени отступов */
-*{
-    margin: 0;
-    padding: 0;
-    /* шрифты */
-    font-family: 'Oswald';
-    font-weight: 400;
-    text-decoration: none;
+body{
+  background-image: url('/static/img/background.png');
 }
 
-
-
-
-
-/* HEADER STYLE */
-/* ============================================================== */
-
-
-.header_content {
-  height: 164px;
-  max-width: 100%;
-	background-color: #4B4E51;
-	display: flex;
-  
+#indexConteiner {
+  width: 100% !important;
+  padding: 0px !important;
+  margin: 0px !important;
 }
 
-
-.logo {
-	width: 500px;
-	height: 144px;  
-  margin: 0 30px;
+#sideBar {
+  width: 34%;
 }
 
-.logo_img {
-  padding: 10px 5px 0px 5px;
-  width: 500px;
-  height: 144px;
-  /* border-bottom: solid 1px white; */
-  display: block;
+#contentContainer {
+  width: 66%;
 }
 
-.SearchBarAndNav{
-  width: 100vw;
+html {
+  text-decoration: none !important;
 }
 
-.nav{
-  height: 90%;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;  
+.card {
+  background-color: #4B4E51 !important;
 }
 
-.navLink{
-  margin: 0 10px;
-  color: white;
-  font-size: 24px;
-}
-
-.searchMenu{
-  height: 50%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.searchBar {
-  width: 80%;
-	height: 40px;
-  border: 0px;
-	border-radius: 10px 0px 0px 10px;
-	background-color: #313234;
-	font-size: 24px;
-  color: white;
-  padding: 0 0 0 20px;
-}
-
-.loupe {
-	width: 28px;
-	height: 28px;
-	z-index: 2000;
-	background-color: #4B4E51;
-	border-radius: 0px 10px 10px 0px;
-	border: 2px solid #313234;
-	padding: 4px
-}
-
-
-
-/* MAIN */
-/* =================================================================================== */
-
-main{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
-
-/* навигационное меню */
-.sidenav {
-    height: 100%;
-    width: 30%;
-    position: relative;
-    top: 1px;
-    left: 0;
-    background-color: #4B4E51;
-    overflow-x: hidden;
-    border-right: solid 1px white;
-  }
-  
-  .dep {
-      display: flex;
-      padding: 20px 30px 20px 30px;
-      border-bottom: 1px solid #fff;
-  }
-
-  .dep-ico{
-    width: 64px;
-    height: 64px;
-  }
-
-  .iconForDep{
-    width: 64px;
-    height: 64px;
-  }
-  /* Отключение flex зависимости от родительского элемента */
-.noneflex {
-	flex: none;
-}
-
-/* Стили навиганции, ссылок А и меню dropdown */
-.sidenav a, .dropdown-btn {
-  margin-left: 30px;
-  padding: 10px 8px 10px 0;
+.acc-header-text {
   text-decoration: none;
-  font-size: 24px;
   color: white;
-  display: block;
-  border: none;
-  background: none;
+  font-family: 'Oswald';
+  font-size: 2rem;
+}
+
+.acc-content-text {
+  text-decoration: none;
+  color: white;
+  font-family: 'Oswald';
+  font-size: 1.5rem !important;
+}
+
+a:hover {
+  color: #e94c66 !Important;
+}
+
+.acc-card {
+  border: 1px solid white;
+}
+
+.primary-worker {
+  width: 50%;
+  height: 100%;
+  background-color: #313234 !important;
+  border: 1px solid white;
+}
+
+.icon-profile {
+  height: 100%;
+  width: 61px;
+}
+
+.item-h1-div {
+  height: 100px;
+  display: flex;
+  align-content: center;
+}
+
+.primary-content {
+  height: 100px;
   width: 100%;
-  text-align: left;
-  cursor: pointer;
-  outline: none;
-}
-
-/* Действия при наведении курсора */
-.sidenav a:hover, .dropdown-btn:hover {
-  color: #f1f1f1;
-}
-
-
-/**/
-.active {
-  background-color: #4B4E51;
-  color: white;
-}
-
-/*Стили выпадающего контейнера со списком*/
-.dropdown-container {
-		display: none;
-		background-color: #4B4E51;
-}
-
-.activeDDC{
-  display: block;
-}
-
-.linksubd{
-  border: solid 1px white;
-  background-color: saddlebrown;
-}
-
-/**/
-.fa-caret-down {
-  float: right;
-  padding: 0px 15px;
-}
-
-/**/
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 10px;}
-  .sidenav a {font-size: 18px;}
-}
-
-
-/* Контент о сотруднике */
-.content {
   display: flex;
 }
 
-
-.content__page {
+.main-info-profile {
   display: flex;
-  flex-direction: column;
-  width: 70%;
-}
-
-
-.contentDesc{
-  display: flex;
-  background-color: red;
-  width: 100%;
-}
-
-.infoDesc{
-  height: 105px;
-  color: white;
-  font-size: 24px;
-  background-color: #313234;
-  width: 50%;
-  border-bottom: 1px solid white;
-  border-top: 1px solid #fff;
-  padding: 9px 0 0 20px;
-}
-
-/* // dam = director and manager  */
-
-.workerCardDAM{
-  width: 50%;
-  display: flex;
-  flex-direction: row;
-  color: white;
-  height: 105px;
-  background-color: #313234;
-}
-
-
-.infoDAM {
-  border-right: 1px solid #4B4E51;
-  border-bottom: 1px solid #4B4E51;
-  border-top: 1px solid #fff;
-  color: #313234;
-  width: 360px;
-  padding: 0 0 0 20px;
-  color: white;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
 }
 
-
-.phone__labelDAM {
-  font-weight: 400;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 35.57px;
-  color: white;
-
-}
-
-
-.phoneDAM {
-  border-right: 1px solid #4B4E51;
-  border-bottom: 1px solid #4B4E51;
-  border-top: 1px solid #fff;
-  color: white;
-  width: 180px;
-  padding: 0 0 0 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.labelDesc{
-  font-size: 24px;
-}
-
-.textDesc{
-  font-weight: 400;
-}
-
-.workers{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.workerCard{
-  width: 50%;
-  display: flex;
-  flex-direction: row;
-  background-color: white;
-  height: 105px;
-}
-
-.icon {
-  background-color: #4B4E51;
-  background-repeat: no-repeat;
-  width: 107px;
-  height: 104px;
-  z-index: 20;
-  border-bottom: 1px solid white;
-  border-top: 1px solid white;
-  display: flex;
-  align-items: center;
-}
-
-.icon__svg {
-  width: 66px;
-  height: auto;
-  display: block;
-  margin: auto;
-
-}
-
-.info {
-  border-right: 1px solid #4B4E51;
-  border-bottom: 1px solid #4B4E51;
-  border-top: 1px solid #fff;
-  color: #313234;
-  width: 360px;
-  padding: 0 0 0 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-left: 1px solid #4B4E51;
-}
-
-.name {
-  font-weight: 400;
-  font-style: normal;
-  font-size: 24px;
-  color: #313234;
-}
-
-
-
-.phone {
-  border-right: 1px solid #4B4E51;
-  border-bottom: 1px solid #4B4E51;
-  border-top: 1px solid #fff;
-  width: 180px;
-  padding: 0 0 0 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.phone__label {
-  font-weight: 400;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 35.57px;
-  color: #4B4E51
-
-}
-
-
-.msg {
-  border-right: 1px solid #4B4E51;
-  border-bottom: 1px solid #4B4E51;
-  border-top: 1px solid #fff;
-  
-
-}
-
-.msg__label {
-  font-weight: 400;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 35.57px;
-  color: #4B4E51
-
-}
-
-
-@media only screen and (max-width: 1024px) {
-
-  .labelDesc{
-    font-size: 18px;
+@media (max-width: 1200px) {
+  .primary-content {
+    display: flex;
   }
+}
 
-  body{
-    max-width: 1024px;
-    /* background-color: red; */
-    font-size: 18px;
+@media (max-width: 1200px) {
+  .primary-worker {
+    height: 105px;
   }
+}
 
-  .sidenav{
-    min-width: 30%;
-    
-  }
-
-  .dep{
-    width: 100%;
-    padding: 20px 10px 20px 0;
-  } 
-
-  .dep-ico{
+@media (max-width: 1200px) {
+  .icon-profile, .icon-profile-def-worker {
     display: none;
   }
-
- 
-
-  .sidenav a, .dropdown-btn{
-    font-size: 18px;
-    word-wrap: break-word;
-    margin-left: 20px
-  }
-
-
-  .content__page{
-    max-width: 70%;
-  }
-
-  header{
-    max-width: 1024px;
-  }
-
-
-  .header_content{
-    max-width: 1024px;
-  }
-
-
-
-  .icon{
-    display: none;
-  }
-
 }
 
-@media only screen and (max-width: 1300px) {
-  .icon__svg{
-    height: 52px;
-    height: 52px;
-  }
+.input-focus-search:focus {
+  border-color: #e94c66 !Important;
+  box-shadow: 0 0 0 .05rem #e94c66 !Important;
+}
 
-  .logo{
-    margin: 0 10px;
-  }
+.search-worker {
+  width: 100%;
+  border: 1px solid #4B4E51 !important;
+}
 
-  .logo_img{
-    width: 100%;
-    
-  }
+.deps-item-header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 
-  *{
-    font-size: 16px;
-  }
-
-  .labelDesc{
-    font-size: 16px;
-  }
-
-
-  .textDesc{
-    font-size: 16px;
+@media (max-width: 400px) {
+  #divForMainLogo {
+    margin-bottom: 10px;
   }
 }
 
 
-@media only screen and (max-width: 900px) {
-  body{
-    max-width: 900px;
-    width: 100%;
-  }
 
-  header{
-    width: 100%;
-    height: 144px;
-  }
+html {
+  color: white !important;
+  font-family: 'Oswald' !important;
+  font-weight: 400 !important;
+}
 
-  .header_content{
-    height: 144px;
-  }
+#h1ForLogin {
+  font-weight: 500 !important;
+  font-size: 62px;
+}
 
-  .logo{
-    width: 400px;
-    height: 144px;
-    margin: 0 0 0 20px;
-    
-  }
 
-  .logo_img{
-    width: 350px;
-    padding: 0;
-  }
+.form-label-bs {
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 24px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
 
-  .nav{
-    height: 88%;
-    padding: 0 0 4px 0;
-  }
+.form-input-pass {
+  border: 1px solid #4B4E51;
+  border-radius: 10px;
+}
 
-  .sidenav{
-    width: 40%;
-  }
+#btn-submit-form {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 24px;
+  border-radius: 10px;
+  background-color: #4b4e51;
+  width: 100%;
+  text-align: center;
+}
 
-  .content__page{
-    width: 60%;
-  }
+.form-input-pass:focus {
+  border-color: #e94c66 !Important;
+  box-shadow: 0 0 0 .05rem #e94c66 !Important;
+}
 
-  .contentDesc{
-    flex-direction: column;
-  }
+main {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 
-  .workerCardDAM{
-    width: 100%;
-    height: 86px;
-  }
+#containerLogin {
+  display: flex;
+  justify-content: center;
+}
 
-  .workerCard{
-    width: 100%;
-    height: 86px;
+#mainDivForLogin {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#DivForLogo {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+@media (max-width: 1200px) {
+  #containerLogin {
+    width: 60% !important;
   }
 }
 
-@media only screen and (max-width: 900px) {
-
-  header{
-    width: 100%;
-    height: 210px;
-  }
-
-  .header_content{
-    width: 100%;
-    height: 210px;
-    display: flex;
-    flex-direction: column;
-    
-  }
-
-  .logo{
-    width: 100%;
-    height: 150px;
-    margin: 10px 0 0 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  .logo_img{
-    width: 80%;
-    padding: 0;
-  }
-
-  .SearchBarAndNav{
-    width: 100%;
-    height: 100px;
-    
-  }
-
-  .nav{
-    height: 40px;
-    justify-content: center;
-  }
-
+#divForLoginForm {
+  display: flex;
+  justify-content: center;
 }
 
-@media only screen and (max-width: 550px) {
-
-  body{
-    max-width: 550px;
-    width: 100%;
+@media (max-width: 1440px) {
+  #DivForLogo {
+    margin-top: 80px;
   }
+}
 
-  header{
-    width: 100%;
-    height: 210px;
+@media (max-width: 992px) {
+  #h1ForLogin {
+    font-size: 1rem;
   }
+}
 
-  .header_content{
-    width: 100%;
-    height: 210px;
-    display: flex;
-    flex-direction: column;
-    
+@media (max-width: 768px) {
+  #mainDivForLogin {
+    width: 100% !important;
   }
+}
 
-  .logo{
-    width: 100%;
-    height: 150px;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+@media (max-width: 992px) {
+  #containerLogin {
+    width: 100% !important;
+    padding: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
   }
+}
 
-  .logo_img{
+@media (max-width: 550px) {
+  #h1ForLogin {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 550px) {
+  #mainLogo {
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 550px) {
+  #formLogin {
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 440px) {
+  main {
+    height: 100% !important;
+  }
+}
+
+@media (max-width: 440px) {
+  #mainDivForLogin {
+    padding-top: 20px !important;
+  }
+}
+
+@media (max-width: 320px) {
+  #mainLogo-1 {
     width: 90%;
-    padding: 0;
-  }
-
-  .SearchBarAndNav{
-    width: 100%;
-    height: 100px;
-    
-  }
-
-  .nav{
-    height: 40px;
-    justify-content: center;
-  }
-
-  .navLink{
-    font-size: 20px;
-  }
-
-
-  main{
-    width: 100%;
-    flex-direction: column;
-  }
-
-  .sidenav{
-    width: 100%;
-  }
-
-
-  .content__page{
-    width: 100vw;
-    max-width: 100vh;;
-  }
-
-  .contentDesc{
-    flex-direction: column;
-  }
-
-  .workerCardDAM{
-    width: 100vw;
-  }
-
-  .workerCard{
-    width: 100vw;
   }
 }
+
+@media (max-width: 400px) {
+  #containerLogin {
+    margin-bottom: 10px !important;
+  }
+}
+
+@media (max-height: 750px) {
+  #mainDivForLogin {
+    padding-top: 120px;
+  }
+}
+
+@media (max-width: 990px) {
+  #DivForLogo {
+    margin-top: 10px;
+  }
+}
+
+#btnSearch {
+  cursor: pointer;
+}
+
+
+
+.defalut-content {
+  width: 50%;
+  height: 100px;
+  background-color: white;
+  border: solid 1px white;
+}
+
+.p-main-info-profile {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.main-info-profile {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  width: 100%;
+}
+
+.black-label {
+  color: rgb(75, 78, 81) !important;
+}
+
+.icon-profile-def-worker {
+  background-color: rgb(75, 78, 81) !important;
+  height: 100px;
+}
+
+.defalut-worker {
+  background-color: white;
+  width: 50%;
+  border: solid 1px rgb(75, 78, 81) !important;
+}
+
+@media (max-width: 1200px) {
+  .primary-worker {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .defalut-worker {
+    height: 102px !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .defalut-worker {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .icon-profile-def-worker {
+    display: block !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .primary-content {
+    height: 210px !important;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1000px) {
+  .primary-worker {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .icon-profile {
+    display: block !important;
+  }
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 550px) {
+  #indexConteiner {
+    display: flex;
+    flex-direction: column !important;
+  }
+}
+
+@media (max-width: 550px) {
+  #sideBar {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 550px) {
+  #contentContainer {
+    width: 100% !important;
+  }
+}
+
+#model-search-worker {
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.7);
+}
+
+.form-input-regWorker {
+  border: 1px solid #4B4E51;
+  border-radius: 10px;
+  margin: 5px 0 10px 0;
+  width: 90% !important;
+}
+
+.input-focus-bs:focus {
+  border-color: #e94c66 !Important;
+  box-shadow: 0 0 0 .05rem #e94c66 !Important;
+}
+
