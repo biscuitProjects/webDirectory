@@ -1,6 +1,4 @@
 // При попадании на сайт проверяется есть ли токен у пользователя
-
-
 // функция выхода из профиля
 // тут я удаляю токен пользователя из Localstorage
 
@@ -76,7 +74,8 @@ function saveUserToken(user, token){
    
 }
 
-    // Получение данных с LocalStorage
+// Получение пользователя с LocalStorage. Если указать флаг del, как true, то можно удалить токен
+// Возвращаем 0, если нечего не нашли
 function getUserToken(del = false){
     for (let i = 0; i < localStorage.length; i++) {
         let key = localStorage.key(i);
@@ -109,6 +108,7 @@ function createJsonForUser(username, token){
         return 0
     }
 }
+
 function hasToken(token){
     if(token.token){
         const user = {
@@ -147,3 +147,20 @@ const postToken = async (url, data) =>{
     const body = await response.json()
     return body
 }
+
+
+// Проверка токена пользователя на действительность.
+const tokenUser =  getUserToken()
+const objTokenUser = {
+    "token": tokenUser
+}
+if(tokenUser){
+    postToken('/auth/checkUserRole', objTokenUser.token).then((data)=>{
+        if(data.message == 'Ошибка при проверки токена, перезайдите в аккаунт'){
+            getUserToken(true)
+        }
+      
+    })
+}
+
+

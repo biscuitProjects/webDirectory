@@ -23,6 +23,7 @@ router.get('/login', async (req, res) =>{
     })
 })
 router.post('/users', controller.checkUserToken)
+router.post('/checkUserRole', controller.checkUserRole)
 router.post('/changePassword', controller.changePassword)
 router.post('/checkJWT', controller.checkUserToken)
 

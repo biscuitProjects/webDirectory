@@ -57,13 +57,12 @@ class SmallScripts {
     async getDataFromToken(token){
         try {
             if (!token) {
-                console.log('null')
                 return "Токен пустой"
             }
             const decodedData = jwt.verify(token, secret)
             return decodedData
         } catch (e) {
-            return  {'error': e, 'code': 'getDataFromToken'}
+            return  {'error': e, 'code': 'Error'}
         }
     }
     

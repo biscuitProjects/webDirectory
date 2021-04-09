@@ -27,7 +27,11 @@
 <script src="/static/public.js"></script> 
 <script src="/static/pwa.js"></script> 
 <script src="/static/fcm.js"></script>
-<script src="/static/js/nav.js"></script>
+{{#if isActive}}
+    {{else}}
+        <script src="/static/js/nav.js"></script>
+{{/if}}
+
 
 
     <script>

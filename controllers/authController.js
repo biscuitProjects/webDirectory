@@ -102,6 +102,21 @@ class authController {
             res.json({message: 'true'})
         }
     }   
+
+    async checkUserRole(req, res){
+        const token = req.headers.authorization.split(' ')[1]
+        const validToken = smallServerScripts.getDataFromToken(token).then((data) =>{
+            if(data.code ==  'Error' || data == 'JsonWebTokenError' || data == 'jwt malformed'){  
+                res.json({message: 'Ошибка при проверки токена, перезайдите в аккаунт'})
+            } else{
+                console.log(data)
+                res.json({message: 'true'})
+            }
+        })
+
+
+        
+    }
 }
 
 module.exports = new authController()

@@ -7,12 +7,19 @@ goToMainBtn.addEventListener('click', (e) =>{
 });
 
 // Перейти в админку
-const goToAdminPanelBtn = document.querySelector('#goToAdminPanel');
 
-goToAdminPanelBtn.addEventListener('click', (e) =>{
-    e.preventDefault()
-    window.location.pathname = '/regNewWorker'
-});
+// const tokenUserInNav =  getUserToken()
+
+// const checkUserToken = postToken('/auth/checkUserRole', tokenUserInNav.token).then((data)=>{
+//     // console.log(data)
+// })
+
+// const goToAdminPanelBtn = document.querySelector('#goToAdminPanel');
+
+// goToAdminPanelBtn.addEventListener('click', (e) =>{
+//     e.preventDefault()
+//     window.location.pathname = '/regNewWorker'
+// });
 
 // Перейти на страницу поиска
 
@@ -38,7 +45,6 @@ goToHelpPage.addEventListener('click', (e) =>{
 const logOut = document.querySelector('#logOut')
 logOut.addEventListener('click', (e) =>{
     e.preventDefault()
-
     getUserToken(true)
 })
 
