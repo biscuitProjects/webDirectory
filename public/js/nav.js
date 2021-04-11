@@ -8,18 +8,23 @@ goToMainBtn.addEventListener('click', (e) =>{
 
 // Перейти в админку
 
-// const tokenUserInNav =  getUserToken()
+const tokenUserInNav =  getUserToken()
 
-// const checkUserToken = postToken('/auth/checkUserRole', tokenUserInNav.token).then((data)=>{
-//     // console.log(data)
-// })
+const checkUserToken = postToken('/auth/checkUserRole', tokenUserInNav).then((data)=>{
+    console.log(data)
+    if(data.message == 'admin'){
+        const adminPanelLi = document.querySelector('#adminPanel-li')
+        adminPanelLi.classList.add('show')
+        adminPanelLi.classList.remove('hide')
+    }
+})
 
-// const goToAdminPanelBtn = document.querySelector('#goToAdminPanel');
+const goToAdminPanelBtn = document.querySelector('#goToAdminPanel');
 
-// goToAdminPanelBtn.addEventListener('click', (e) =>{
-//     e.preventDefault()
-//     window.location.pathname = '/regNewWorker'
-// });
+goToAdminPanelBtn.addEventListener('click', (e) =>{
+    e.preventDefault()
+    window.location.pathname = '/regNewWorker'
+});
 
 // Перейти на страницу поиска
 

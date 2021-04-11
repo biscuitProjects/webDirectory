@@ -123,7 +123,6 @@ function hasToken(token){
 }
 
 
-
 const postToken = async (url, data) =>{
     const token = data.token
     const response = await fetch(url, {
@@ -161,6 +160,11 @@ if(tokenUser){
         }
       
     })
+} else{
+    if(window.location.pathname != '/auth/login'){
+        window.location.pathname = '/auth/login'
+    }
 }
+
 
 

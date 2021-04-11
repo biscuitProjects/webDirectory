@@ -28,3 +28,5 @@ router.post('/changePassword', controller.changePassword)
 router.post('/checkJWT', controller.checkUserToken)
 
 module.exports = router
+
+

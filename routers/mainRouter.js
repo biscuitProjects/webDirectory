@@ -57,7 +57,8 @@ mainRouter.post('/searchWorkersLimit', workerController.searchWorkersLimit)
 mainRouter.get('/regNewWorker', async (req, res) => {
   res.render('regNewWorker', {
     title: 'Регистрация нового сотрудника',
-    stylecss: 'regNewWorker'
+    stylecss: 'regNewWorker',
+    needAdminRole: 1
   })
 })
 

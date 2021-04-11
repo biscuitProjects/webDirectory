@@ -109,8 +109,7 @@ class authController {
             if(data.code ==  'Error' || data == 'JsonWebTokenError' || data == 'jwt malformed'){  
                 res.json({message: 'Ошибка при проверки токена, перезайдите в аккаунт'})
             } else{
-                console.log(data)
-                res.json({message: 'true'})
+                res.json({message: `${data.roles}`})
             } 
         })
 

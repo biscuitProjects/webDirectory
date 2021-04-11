@@ -34,8 +34,9 @@ html {
 .acc-content-text {
   text-decoration: none;
   color: white;
-  font-family: 'Oswald';
   font-size: 1.5rem !important;
+  font-family: Oswald;
+  font-size: 1rem;
 }
 
 a:hover {
@@ -55,7 +56,10 @@ a:hover {
 
 .icon-profile {
   height: 100%;
-  width: 61px;
+  width: 100px;
+  background-color: #313234 !important;
+  /* border-bottom: 1px solid white;
+  border-top: 1px solid white; */
 }
 
 .item-h1-div {
@@ -279,16 +283,17 @@ main {
 
 
 
-.defalut-content {
-  width: 50%;
+.default-content {
+  width: 100%;
   height: 100px;
-  background-color: white;
   border: solid 1px white;
 }
 
 .p-main-info-profile {
-  font-size: 1.2rem;
   color: white;
+  margin-bottom: 0;
+  font-family: Oswald;
+  font-size: 1.4rem;
 }
 
 .main-info-profile {
@@ -307,10 +312,11 @@ main {
   height: 100px;
 }
 
-.defalut-worker {
+.default-worker {
   background-color: white;
   width: 50%;
-  border: solid 1px rgb(75, 78, 81) !important;
+  height: 100%;
+  border: solid 1px rgb(255, 255, 255) !important;
 }
 
 @media (max-width: 1200px) {
@@ -320,13 +326,13 @@ main {
 }
 
 @media (max-width: 1200px) {
-  .defalut-worker {
+  .default-worker {
     height: 102px !important;
   }
 }
 
 @media (max-width: 1000px) {
-  .defalut-worker {
+  .default-worker {
     width: 100%;
   }
 }
@@ -363,20 +369,20 @@ main {
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 700px) {
   #indexConteiner {
     display: flex;
     flex-direction: column !important;
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 700px) {
   #sideBar {
     width: 100% !important;
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 700px) {
   #contentContainer {
     width: 100% !important;
   }
