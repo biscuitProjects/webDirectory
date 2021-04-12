@@ -1,4 +1,4 @@
-const postToken = async (url, data) =>{
+const postTokenNAR = async (url, data) =>{
      const token = data.token
      const response = await fetch(url, {
          method: 'POST',
@@ -41,13 +41,13 @@ function getUserTokenInNAR(del = false){
      return 0;
  }
 
- const tokenUser =  getUserTokenInNAR()
-const objTokenUser = {
-    "token": tokenUser
+ const tokenUserNAR =  getUserTokenInNAR()
+const objTokenUserNAR = {
+    "token": tokenUserNAR
 }
 
-if(tokenUser){
-     postToken('/auth/checkUserRole', objTokenUser.token).then((data)=>{
+if(tokenUserNAR){
+    postTokenNAR('/auth/checkUserRole', objTokenUserNAR.token).then((data)=>{
          if(data.message == 'Ошибка при проверки токена, перезайдите в аккаунт'){
            getUserTokenInNAR(true)
          }

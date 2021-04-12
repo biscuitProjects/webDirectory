@@ -37,6 +37,11 @@ html {
   font-size: 1.5rem !important;
   font-family: Oswald;
   font-size: 1rem;
+  cursor: pointer;
+}
+
+.acc-content-text:hover{
+  color: #e94c66 !Important;
 }
 
 a:hover {

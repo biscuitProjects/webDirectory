@@ -110,11 +110,11 @@ main{
   
   
   
-  #h1ForLogin {
+  #h1ForLogin  {
+    margin-top: 20px;
     font-weight: 500 !important;
-    font-size: 62px;
-    font-family: Oswald, sans-serif;
-    font-size: 1.5rem;
+    font-size: 2.2rem !important;
+    font-family: Oswald;  
     text-align: center;
   }
   
@@ -213,6 +213,17 @@ main{
   
   }
   
+  /* min 1440 */
+@media (min-width: 1440px) {
+  #DivForLogo {
+    height: 80px;
+  }
+  
+  #containerLogin {
+    width: 50% !important;
+  }
+}
+
   /* min 1000 */
   
   @media (min-width: 1000px) {
@@ -229,7 +240,7 @@ main{
     }
   
     #containerLogin {
-        width: 60% !important;
+        width: 50% !important;
     }
   }
   
@@ -312,7 +323,7 @@ main{
     }
   
     #h1ForLogin {
-        font-size: 2rem !important;
+        font-size: 1.6rem !important;
     }
   
     #mainLogo {
