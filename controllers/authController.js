@@ -5,6 +5,10 @@ const {secret} = require("../config/config")
 const User = require('../models/user') 
 const smallServerScripts = require('../smallServerScripts/smallServerScripts')
 
+
+// красный цвет в консоли. 
+// console.log('\x1b[41m%s\x1b[0m', e)
+
 class authController {
     async registration(req, res) {
         try {
@@ -13,9 +17,9 @@ class authController {
             // хешируем
             const hashPassword = bcrypt.hashSync(password, 7)
             // Тут мы ищем пользователя с таким же логином, если есть выводим ошибку
-            const candidate = await User.findOne({ where: { hashPassword: hashPassword } })
+            const candidate = await User.findOne({ where: { username: username } })
             if(candidate !== null) {
-                console.log(candidate)
+                console.log('\x1b[41m%s\x1b[0m', `Ошибка при регистрации, данный логин уже зарегистрирован            ${username}`)
                 return res.status(400).json({message: "Ошибка при регистрации, данный логин уже зарегистрирован"})
             }
             
@@ -28,7 +32,7 @@ class authController {
             
             return res.json({message: "Пользователь успешно зарегистрирован"})
         } catch (e) {
-            console.log(e)
+            console.log('\x1b[41m%s\x1b[0m', e)
             res.status(400).json({message: 'Ошибка при регистрации'})
         }
     }
@@ -64,7 +68,7 @@ class authController {
             }
 
         } catch (e) {
-            console.log(e)
+            console.log('\x1b[41m%s\x1b[0m', e)
             res.status(400).json({message: 'Login error'})
         }
     }
@@ -82,12 +86,14 @@ class authController {
                 userProfile.save()
                 return res.json({message: "Пароль успешно изменён"})
             } catch (error) {
+                console.log('\x1b[41m%s\x1b[0m', 'При изменении пароля произошла ошибка связи с БД.') 
                 res.status(400).json({message: 'При изменении пароля произошла ошибка связи с БД.'})
             }
 
         } else{
+            console.log('\x1b[41m%s\x1b[0m', 'Ошибка при передачи токена. Попробуйте выйти из аккаунта и изменить пароль снова.')
             res.status(400).json({message: 'Ошибка при передачи токена. Попробуйте выйти из аккаунта и изменить пароль снова.'})
-        }
+        } 
     }
 
     // эту функцию я буду часто использовать для проверки токена пользователя
@@ -97,6 +103,7 @@ class authController {
         const validToken = smallServerScripts.getDataFromToken(token)
         
         if(validToken.code ==  'getDataFromToken'){
+            console.log('\x1b[41m%s\x1b[0m', 'Ошибка при проверки токена, перезайдите в аккаунт')
             res.status(400).json({message: 'Ошибка при проверки токена, перезайдите в аккаунт'})
         } else{
             res.json({message: 'true'})
@@ -107,6 +114,7 @@ class authController {
         const token = req.headers.authorization.split(' ')[1]
         const validToken = smallServerScripts.getDataFromToken(token).then((data) =>{
             if(data.code ==  'Error' || data == 'JsonWebTokenError' || data == 'jwt malformed'){  
+                console.log('\x1b[41m%s\x1b[0m', 'Ошибка при проверки токена, перезайдите в аккаунт')
                 res.json({message: 'Ошибка при проверки токена, перезайдите в аккаунт'})
             } else{
                 res.json({message: `${data.roles}`})
