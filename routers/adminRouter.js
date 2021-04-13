@@ -8,6 +8,11 @@ const adminController = require('../controllers/adminController')
 // Нужно для получени всех директор из БД
 adminRouter.post('/getDirectors', adminController.getDirectors)
 
+adminRouter.post('/getDeps', adminController.getDeps)
+
+// Регистрация новой должности
+adminRouter.post('/regNewEmployee', adminController.createEmployee)
+
 adminRouter.get('/regNewWorker', async (req, res) => {
   res.render('regNew/regNewWorker', {
     title: 'Регистрация нового сотрудника',
@@ -20,21 +25,24 @@ adminRouter.get('/regNewWorker', async (req, res) => {
 adminRouter.get('/regNewDep', async(req, res) =>{
   res.render('regNew/regNewDep', {
     title: 'Регистрация департамента',
-    stylecss: 'regs'
+    stylecss: 'regs',
+    needAdminRole: 1
   })
 })
 
 adminRouter.get('/regNewSubd', async(req, res) =>{
   res.render('regNew/regNewSubd', {
     title: 'Регистрация подразделения',
-    stylecss: 'regs'
+    stylecss: 'regs',
+    needAdminRole: 1
   })
 })
 
 adminRouter.get('/regNewEmployeePost', async(req, res) =>{
   res.render('regNew/regNewEmployeePost', {
     title: 'Регистрация подразделения',
-    stylecss: 'regs'
+    stylecss: 'regs',
+    needAdminRole: 1
   })
 })
 

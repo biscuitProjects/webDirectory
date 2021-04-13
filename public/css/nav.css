@@ -46,7 +46,13 @@ a{
   margin: 0;
   padding: 0 20px 0 0;
 }
-   
+
+.dropdown-item{
+  color: rgb(75, 78, 81) !important;
+  font-family: 'Oswald' !important;
+  font-size: 1rem !important;
+}
+
    
 /* min 1197 */
    

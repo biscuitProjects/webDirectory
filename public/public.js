@@ -8,11 +8,6 @@
 const fetchPostData = async (url, token, selector) =>{
     const response = await fetch(url, {
         method: 'POST',
-        mode: 'cors',
-        cache: 'no-cache', 
-        credentials: 'same-origin',
-        redirect: 'follow', 
-        referrerPolicy: 'no-referrer',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'Authorization': `Bearer ${token}`

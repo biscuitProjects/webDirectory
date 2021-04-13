@@ -9,6 +9,7 @@ const jwt = require('jsonwebtoken');
 const { validationResult } = require('express-validator')
 const {secret} = require("../config/config")
 
+
 class adminController {
      async getDirectors(req, res){
           try {
@@ -40,6 +41,18 @@ class adminController {
                res.json({message: 'error'})    
           }
      }
+
+     async getDeps(req, res){
+          try {
+              const token = req.headers.authorization.split(' ')[1]
+              const getDep = await Dep.findAll()
+              res.json({message: getDep})    
+          } catch (error) {
+              console.log('\x1b[41m%s\x1b[0m', error)
+              res.json({message: 'error'})    
+          }
+        
+      }
 
      async createDep(req, res){
           try {
@@ -102,23 +115,27 @@ class adminController {
           try {
                const token = req.headers.authorization.split(' ')[1]
                const {name, dep} = req.body
-               const validateToken = smallServerScripts.getDataFromToken(token).then((data) =>{
-                    if(data.code){
-                         console.log('\x1b[41m%s\x1b[0m', data.code)
-                         res.json({message: 'error'})    
-                    }
-                    if(data.roles != 'admin'){
-                         console.log(data)
-                         console.log('\x1b[41m%s\x1b[0m', 'У вас нет прав')
-                         res.json({message: 'У вас нет прав'})    
-                    }
-                    return data.role
-               })
+               const validateToken = jwt.verify(token, secret)
+               
+               if(validateToken.code){
+                    console.log('\x1b[41m%s\x1b[0m', data.code)
+                    res.json({message:'Ошибка'})
+               }
+               if(validateToken.roles != 'admin'){
+                    console.log(data)
+                    console.log('\x1b[41m%s\x1b[0m', 'У вас нет прав')
+                    res.json({message:'У вас нет прав'})
+               }
 
-               employeePosts.create({
-                    name,
-                    dep
-               })
+               if(validateToken == 'error' || validateToken == 'У вас нет прав' || validateToken == 'Error'){
+                    res.json({message: 'error'})    
+               } else{
+                    employeePosts.create({
+                         name,
+                         dep
+                    })
+               }
+              
                res.json({message: 'Новая должность создана'})    
           } catch (error) {
                console.log('\x1b[41m%s\x1b[0m', error)
@@ -180,7 +197,7 @@ class adminController {
                     manager_new_subd,
                     director_worker
                })
-               res.json({message: 'Новая должность создана'})    
+               res.json({message: 'Новое подразделение создано'})    
           } catch (error) {
                console.log('\x1b[41m%s\x1b[0m', error)
                res.json({message: 'error'})    

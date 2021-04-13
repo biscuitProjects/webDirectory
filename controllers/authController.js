@@ -56,6 +56,7 @@ class authController {
             }
             // Тут я сверяю данные, если нашёл то что нужно, тогда вывожу 
             if(candidate[indexCandidate] === null || candidate[indexCandidate] === undefined) {
+                console.error("Введен неверный пароль")
                 res.status(400).json({message: "Введен неверный пароль"})
             } else{ 
                 const username = candidate[indexCandidate].username
@@ -68,7 +69,7 @@ class authController {
             }
 
         } catch (e) {
-            console.log('\x1b[41m%s\x1b[0m', e)
+            console.error('\x1b[41m%s\x1b[0m', e)
             res.status(400).json({message: 'Login error'})
         }
     }
@@ -103,7 +104,7 @@ class authController {
         const validToken = smallServerScripts.getDataFromToken(token)
         
         if(validToken.code ==  'getDataFromToken'){
-            console.log('\x1b[41m%s\x1b[0m', 'Ошибка при проверки токена, перезайдите в аккаунт')
+            console.error('\x1b[41m%s\x1b[0m', 'Ошибка при проверки токена, перезайдите в аккаунт')
             res.status(400).json({message: 'Ошибка при проверки токена, перезайдите в аккаунт'})
         } else{
             res.json({message: 'true'})
