@@ -1,0 +1,27 @@
+<main class="d-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center align-items-center justify-content-xl-center justify-content-xxl-center align-items-xxl-start" style="background: url(&quot;/static/img/background.png&quot;);">
+    <div class="container-lg d-xl-flex d-xxl-flex flex-column align-items-center justify-content-xxl-center align-items-xxl-starty h-100" id="containerLogin">
+        <div class="d-xl-flex d-xxl-flex flex-column justify-content-xl-center align-items-xl-center justify-content-xxl-start align-items-xxl-center" id="mainDivForLogin" style="">
+        {{!-- <div class="d-xl-flex d-xxl-flex justify-content-xl-center justify-content-xxl-center" id="DivForLogo">
+            <img id="mainLogo" src="/static/img/logoB.svg" alt="logo">
+        </div> --}}
+        <div>
+            <h1 class="text-uppercase" id="h1ForLogin">Регистрация должности</h1>
+        </div>
+        <div class="d-lg-flex d-xl-flex d-xxl-flex justify-content-lg-center justify-content-xl-center justify-content-xxl-center" id="divForLoginForm">
+            <form id="formNewEmployeePost" style="width: 50%;">
+
+               <label class="form-label form-label-bs">Название</label>
+               <input class="form-control form-input-regWorker input-focus-bs" type="text" name="name" placeholder="Введите название" required="">
+                
+               <label class="form-label form-label-bs">Департамент</label>
+               <select id="selectForDeps" class="form-select form-input-regWorker input-focus-bs" name="dep" required="">
+                    
+               </select>
+               
+               <input  class="btn" id="btn-submit-form" type="submit" value="Зарегистрировать">
+            </form>
+        </div>
+    </div>
+</main>
+
+<script async src="/static/regNew/js/regNewEmployeePost.js"></script>

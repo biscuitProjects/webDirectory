@@ -3,14 +3,6 @@ const mainRouter = new Router()
 const {check} = require("express-validator")
 const workerController = require('../controllers/workerController')
 
-const admin = require('firebase-admin');
-var serviceAccount = require('../public/webdirectory-993df-firebase-adminsdk-9bip9-cce47bf93e.json');
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
-
-
 // const express = require('express')
 
 // const path = require('path')
@@ -18,21 +10,13 @@ admin.initializeApp({
 // app.use(express.urlencoded({ extended: true }))
 // app.use(express.static(path.join(__dirname, 'public')))
 
+
 mainRouter.get('/', async (req, res) => {
     res.render('index', {
       title: 'Справочник',
       isIndex: true,
       stylecss: 'index'
     })
-})
-
-
-mainRouter.get('/testindex', async (req, res) => {
-  res.render('index', {
-    title: 'Авторизация',
-    isIndex: true,
-    stylecss: 'index'
-  })
 })
 
 // // Получаем департамент из бд
@@ -51,16 +35,10 @@ mainRouter.get('/searchWorkersLimit', async (req, res) => {
     stylecss: 'search'
   })
 })
+// Страница поиска сотрудников
 mainRouter.post('/searchWorkersLimit', workerController.searchWorkersLimit)
 
 
-mainRouter.get('/regNewWorker', async (req, res) => {
-  res.render('regNewWorker', {
-    title: 'Регистрация нового сотрудника',
-    stylecss: 'regNewWorker',
-    needAdminRole: 1
-  })
-})
 
 mainRouter.get('/search', async (req, res) => {
   res.render('search', {
@@ -72,9 +50,8 @@ mainRouter.get('/search', async (req, res) => {
 
 mainRouter.post('/getEmployeePosts', workerController.getEmployeePosts)
 
-mainRouter.post('/regNewWorker', workerController.createNewWorker)
 
-
+// Удалить?
 mainRouter.get('/offcanvas', async(req, res) =>{
   res.render('offcanvas.hbs', {
     title: 'test offcanvas',
@@ -82,6 +59,8 @@ mainRouter.get('/offcanvas', async(req, res) =>{
   })
 })
 
+
+// Удалить?
 mainRouter.get('/versionVladimir', async(req, res) =>{
   res.render('versionVladimir.hbs', {
     title: 'test versionVladimir',
@@ -96,48 +75,16 @@ mainRouter.get('/helpme', async(req, res) =>{
   })
 })
 
+mainRouter.get('/calendar', async(req, res) =>{
+  res.render('calendar', {
+    title: 'Календарь',
+    stylecss: 'calendar'
+  })
+})
 
 // Компонены
 
 mainRouter.get('/getNav', )
 
-
-// тестовый запрос, для push
-mainRouter.post('/test', async (req, res) => {
-
-  try {
-    
-  // This registration token comes from the client FCM SDKs.
-    var registrationToken = 'cPrNBxNfx7Al4Na-GFnsId:APA91bEDffD8t0sqP1HT44QQQC5R9LO_CjJ7xAWhVm5U3n3e-tkUDBNNjuIuDonSMHlaKiYBVEDsg7pfnwj33BkPtPEcToqIs6PNTVQXn5z0-coPkb9SrNT2B66zYOv66pGw2ocnI0nZ';
-
-    var message = {
-      notification: {
-        title: 'hello',
-        body: 'hello2'
-      },
-      data: {
-        score: '850',
-        time: '2:45'
-      },
-      token: registrationToken
-    };
-
-    // Send a message to the device corresponding to the provided
-    // registration token.
-    admin.messaging().send(message)
-      .then((response) => {
-        // Response is a message ID string.
-        console.log('Successfully sent message:', response);
-      })
-      .catch((error) => {
-        console.log('Successfully sent message----------------');
-        console.log(error);
-    });
-    res.json({message:"3123131"})
-
-  } catch (error) {
-    res.json({message:"errr"})
-  }
-})
 
 module.exports = mainRouter

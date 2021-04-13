@@ -12,7 +12,18 @@
 			<ul class="navbar-nav d-xxl-flex ms-auto justify-content-xxl-end align-items-xxl-start text-uppercase" id="ul-nav-list">
 				<li class="nav-item"><a class="nav-link active" id="goToMain" style="font-family: Oswald, sans-serif;">Главная</a></li>
 			     <li class="nav-item"><a class="nav-link" id="goToSearch" id="btnSearch">Поиск</a></li>
-			     <li id="adminPanel-li" class="nav-item hide"><a class="nav-link" id="goToAdminPanel">Админка</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Админ
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<li><a class="dropdown-item" href="/admin/regNewWorker">Регистрация сотрудника</a></li>
+						<li><a class="dropdown-item" href="/admin/regNewDep">Регистрация департамента</a></li>
+						<li><a class="dropdown-item" href="/admin/regNewSubd">Регистрация подразделения</a></li>
+						<li><a class="dropdown-item" href="/admin/regNewEmployeePost">Регистрация должности</a></li>
+					</ul>
+				</li>
+			     {{!-- <li id="adminPanel-li" class="nav-item hide"><a class="nav-link" id="goToAdminPanel">Админка</a></li> --}}
 			     <li class="nav-item"><a class="nav-link" id="goToHelpPage">Помощь</a></li>
 				<li class="nav-item"><a class="nav-link" id="logOut">Выйти</a></li>
 			</ul>
